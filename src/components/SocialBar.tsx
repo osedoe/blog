@@ -6,7 +6,7 @@ import { faEnvelopeSquare } from '@fortawesome/free-solid-svg-icons';
 import { generateRandomNumber } from 'extend-random';
 
 const Wrapper = styled.div`
-  color: var(--white);
+  color: var(--black);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -22,7 +22,7 @@ const Wrapper = styled.div`
     content: '';
     height: 201px;
     width: 2px;
-    background-color: var(--white);
+    background-color: var(--black);
     margin-bottom: 12px;
     margin-right: 2px;
     border-radius: 2px;
@@ -31,7 +31,7 @@ const Wrapper = styled.div`
     content: "";
     height: 121px;
     width: 2px;
-    background-color: var(--white);
+    background-color: var(--black);
     margin-top: 12px;
     margin-right: 2px;
     border-radius: 2px;

@@ -30,6 +30,7 @@
   "devDependencies": {
     "@emotion/core": "^10.0.17",
     "@emotion/styled": "^10.0.17",
+    "@fortawesome/fontawesome-svg-core": "^1.2.25",
     "@types/node": "^12.7.5",
     "@types/react": "^16.9.2",
     "@types/react-dom": "^16.9.0",
