@@ -26,6 +26,7 @@ const Wrapper = styled.div`
     margin-bottom: 12px;
     margin-right: 2px;
     border-radius: 2px;
+    opacity: .85;
   }
   :after {
     content: "";
@@ -35,6 +36,7 @@ const Wrapper = styled.div`
     margin-top: 12px;
     margin-right: 2px;
     border-radius: 2px;
+    opacity: .85;
   }
   & a:hover {
     color: ${ generateRandomNumber(0, 1) >= .5 ? 'var(--blue)' : 'var(--yellow)' };
