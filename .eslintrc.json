@@ -1,0 +1,18 @@
+{
+  "extends": [
+    "react-app",
+    "plugin:jsx-a11y/recommended"
+    ],
+  "plugins": [
+    "no-only-tests"
+  ],
+  "rules": {
+    "no-unused-vars": "error",
+    "no-multiple-empty-lines": "error",
+    "curly": [
+      2,
+      "all"
+    ],
+    "no-only-tests/no-only-tests": "error"
+  }
+}
