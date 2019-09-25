@@ -1,10 +1,15 @@
 import React from "react"
 import styled from "@emotion/styled"
+import { Link } from "gatsby"
+
+const Title = styled(Link)`
+  text-decoration: none;
+`
 
 const H1 = styled.h1`
     align-items: center;
     box-sizing: border-box;
-    color: var(--black);
+    color: var(--gray);
     display: flex;
     flex-direction: row;
     font-family: Audiowide, monospace;
@@ -24,4 +29,4 @@ const H1 = styled.h1`
     }
 `
 
-export const Logo = () => <H1>_Ose _Diaz</H1>
+export const Logo = () => <Title to="/"><H1>_Ose _Diaz</H1></Title>

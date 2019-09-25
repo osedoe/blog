@@ -1,8 +1,17 @@
 import React from "react"
-import { Header } from "../components/header/Header"
-import { SocialBar } from "../components/SocialBar"
+import { Layout } from "../components/Layout"
+import styled from "@emotion/styled"
 
-export default () => <>
-  <Header/>
-  <SocialBar/>
-</>
+const Container = styled.div`
+  background-color: #FDFDFD;
+  min-height: 100vh;
+  min-width: 100vw;
+`;
+
+export default () => {
+  return <Container>
+  <Layout>
+    HOMEPAGE
+  </Layout>
+  </Container>
+}

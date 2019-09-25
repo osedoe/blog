@@ -3,6 +3,6 @@ import { Layout } from "../components/Layout"
 
 export default () => {
   return <Layout>
-    This is going to be the about page.
+    Page not found...
   </Layout>
-}
+};
