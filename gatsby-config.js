@@ -5,10 +5,17 @@
  */
 
 module.exports = {
-  plugins: ["gatsby-plugin-typescript",
+  siteMetadata: {
+    title: "_Ose _Diaz",
+  },
+  plugins: [
+    "gatsby-plugin-typescript",
+    `gatsby-plugin-emotion`,
     {
-      resolve: `gatsby-plugin-emotion`,
+      resolve: `gatsby-source-filesystem`,
       options: {
+        name: `src`,
+        path: `${__dirname}/src/`,
       },
     },
   ],

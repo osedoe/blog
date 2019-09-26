@@ -1,6 +1,16 @@
 import React from "react"
 import styled from "@emotion/styled"
-import { Link } from "gatsby"
+import { graphql, Link, useStaticQuery } from "gatsby"
+
+export const query = graphql`
+  query {
+    site {
+      siteMetadata {
+        title
+      }
+    }
+  }
+`
 
 const Title = styled(Link)`
   text-decoration: none;
@@ -29,4 +39,18 @@ const H1 = styled.h1`
     }
 `
 
-export const Logo = () => <Title to="/"><H1>_Ose _Diaz</H1></Title>
+export const Logo = () => {
+  const data = useStaticQuery(
+    graphql`
+      query {
+        site {
+          siteMetadata {
+            title
+          }
+        }
+      }
+    `
+  )
+
+  return <Title to="/"><H1>{data.site.siteMetadata.title}</H1></Title>
+}
