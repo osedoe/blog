@@ -35,6 +35,7 @@
     "@types/react-dom": "^16.9.0",
     "gatsby-plugin-routes": "^1.0.0",
     "gatsby-source-filesystem": "^2.1.26",
+    "gatsby-transformer-remark": "^2.6.26",
     "prettier": "^1.18.2"
   },
   "repository": {
