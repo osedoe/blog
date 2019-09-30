@@ -5,12 +5,12 @@ import styled from "@emotion/styled"
 
 const Container = styled.div`
   margin: 0 auto;
-  max-width: 1250px;
-`;
+  max-width: 960px;
+`
 
 const Wrapper = styled.div`
-  padding: 60px 90px;
-`;
+  padding: 60px 120px;
+`
 
 export const Layout: FC = ({ children }) => {
   return <Container>
