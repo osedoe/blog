@@ -19,7 +19,7 @@ const Title = styled(Link)`
 const H1 = styled.h1`
   align-items: center;
   box-sizing: border-box;
-  color: var(--gray);
+  color: var(--dark-grey);
   display: flex;
   flex-direction: row;
   font-family: Audiowide, monospace;

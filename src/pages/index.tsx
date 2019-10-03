@@ -2,7 +2,21 @@ import React from "react"
 import { Layout } from "../components/Layout"
 import styled from "@emotion/styled"
 import { graphql } from "gatsby"
-import { Jumbotron } from "../components/jumbotron/Jumbotron"
+
+const BlogIndexContainer = styled.div`
+  background: linear-gradient(to top left, var(--purple), var(--pink));
+  border-radius: 4px;
+  padding: 15px;
+`;
+
+const P = styled.p`
+  color: var(--grey);
+  font-family: Monaco, sans-serif;
+  font-style: italic;
+  padding: 30px;
+  text-align: center;
+  opacity: .8;
+`
 
 export const query = graphql`
   query {
@@ -30,8 +44,9 @@ const Container = styled.div`
 export default ({ data }) => {
   return <Container>
     <Layout>
-      <Jumbotron/>
-      <h4>{data.allMarkdownRemark.totalCount} Posts</h4>
+      <P>Personal blog about all things web and not so web</P>
+      <h2>{data.allMarkdownRemark.totalCount} Posts so far...</h2>
+      <BlogIndexContainer>
       {data.allMarkdownRemark.edges.map(({ node }) => (
         <div key={node.id}>
           <h3>
@@ -41,6 +56,7 @@ export default ({ data }) => {
           <p>{node.excerpt}</p>
         </div>
       ))}
+      </BlogIndexContainer>
     </Layout>
   </Container>
 }

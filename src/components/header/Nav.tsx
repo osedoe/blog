@@ -10,31 +10,33 @@ const Container = styled.nav`
 `;
 
 const Li = styled(Link)`
-  color: var(--gray);
+  color: var(--dark-grey);
+  font-size: 18px;
   padding: 15px 30px;
   text-decoration: none;
   user-select: none;
   position: relative;
   
   :before {
-      background: var(--yellow);
+      background: linear-gradient(to right, #642b73, #c6426e);
       border-radius: 4px;
       content: '';
+      height: 0;
+      left: 25%;
       position: absolute;
       top: 50%;
-      left: 15%;
-      height: 0;
-      width: 70%;
-      z-index: -1;
       transition: all 500ms ease-in-out;
+      width: 50%;
+      z-index: -1;
     }
   
   
   &:hover {
-    transform: scale(1.1);
+    //transform: scale(1.1);
+    text-shadow: 0 0 2px var(--dirty-white);
   
     :before {
-      background: var(--yellow);
+      background: linear-gradient(to right, var(--purple), var(--pink));
       border-radius: 4px;
       content: '';
       position: absolute;
@@ -42,8 +44,8 @@ const Li = styled(Link)`
       left: 15%;
       height: 30%;
       width: 70%;
-      z-index: -1;
       transition: all 200ms ease-out;
+      z-index: -1;
     }
   }
 `;
