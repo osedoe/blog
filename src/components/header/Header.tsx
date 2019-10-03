@@ -3,7 +3,7 @@ import styled from "@emotion/styled"
 import { Logo } from "./Logo"
 import { Nav } from "./Nav"
 
-const Container = styled.div`
+const Container = styled.header`
   box-sizing: border-box;
   display: grid;
   grid-template-columns: 180px auto;

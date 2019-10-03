@@ -2,6 +2,7 @@ import React from "react"
 import { Layout } from "../components/Layout"
 import styled from "@emotion/styled"
 import { graphql } from "gatsby"
+import { Jumbotron } from "../components/jumbotron/Jumbotron"
 
 export const query = graphql`
   query {
@@ -22,7 +23,6 @@ export const query = graphql`
 `
 
 const Container = styled.div`
-  background: #FDFDFD;
   min-height: 100vh;
   min-width: 100vw;
 `
@@ -30,7 +30,7 @@ const Container = styled.div`
 export default ({ data }) => {
   return <Container>
     <Layout>
-      <h1>Ose's last posts</h1>
+      <Jumbotron/>
       <h4>{data.allMarkdownRemark.totalCount} Posts</h4>
       {data.allMarkdownRemark.edges.map(({ node }) => (
         <div key={node.id}>
