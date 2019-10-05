@@ -4,9 +4,9 @@ import styled from "@emotion/styled"
 import { graphql } from "gatsby"
 
 const BlogIndexContainer = styled.div`
-  background: linear-gradient(to top left, var(--purple), var(--pink));
   border-radius: 4px;
-  padding: 15px;
+  box-shadow: 0 0 8px var(--purple);
+  padding: 15px 30px;
 `;
 
 const P = styled.p`

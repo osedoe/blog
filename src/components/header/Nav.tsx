@@ -18,7 +18,7 @@ const Li = styled(Link)`
   position: relative;
   
   :before {
-      background: linear-gradient(to right, #642b73, #c6426e);
+      background: linear-gradient(to right, var(--purple), var(--pink));
       border-radius: 4px;
       content: '';
       height: 0;

@@ -16,29 +16,59 @@ const Title = styled(Link)`
   text-decoration: none;
 `
 
+// const H1 = styled.h1`
+//   color: var(--dark-grey);
+//   display: flex;
+//   flex-direction: row;
+//   font-size: 20px;
+//   height: 32px;
+//   pointer-events: none;
+//   position: relative;
+//   text-align: center;
+//   user-select: none;
+//   width: 160px;
+//
+//   @media (max-width: 1000px) {
+//     font-size: 16px;
+//     margin: 0;
+//   }
+// `
 const H1 = styled.h1`
   align-items: center;
+  background: transparent;
   box-sizing: border-box;
   color: var(--dark-grey);
   display: flex;
   flex-direction: row;
+  //margin: 16px;
+  opacity: .85;
   font-family: Audiowide, monospace;
   font-size: 20px;
-  height: 32px;
-  justify-content: center;
-  margin: 16px;
-  opacity: .85;
-  pointer-events: none;
+  margin-right: 8px;
   position: relative;
-  text-align: center;
+  transition: all .4s;
   user-select: none;
-  width: 160px;
   
-  @media (max-width: 1000px) {
-    font-size: 16px;
-    margin: 0;
+  :before {
+    background: linear-gradient(to right, var(--purple), var(--pink));
+    content: attr(data-letters);
+    position: absolute;
+    z-index: 2;
+    overflow: hidden;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    //color: linear;
+    white-space: nowrap;
+    width: 0;
+    transition: width ease-in-out 0.4s;
   }
-`
+  
+  :hover {
+    :before {
+      width: 100%;
+    }
+  }
+`;
 
 export const Logo = () => {
   const data = useStaticQuery(
@@ -53,5 +83,5 @@ export const Logo = () => {
     `
   )
 
-  return <Title to="/"><H1>{data.site.siteMetadata.title}</H1></Title>
+  return <Title to="/"><H1 data-letters="_Ose _Diaz">{data.site.siteMetadata.title}</H1></Title>
 }
