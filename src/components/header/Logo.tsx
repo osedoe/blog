@@ -84,5 +84,5 @@ export const Logo = () => {
     `
   )
 
-  return <Title to="/"><H1 data-letters="_Ose _Diaz">{data.site.siteMetadata.title}</H1></Title>
+  return <Title to="/"><H1 data-letters="_Idle hands _build nothing">{data.site.siteMetadata.title}</H1></Title>
 }

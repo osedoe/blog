@@ -7,6 +7,7 @@ const Container = styled.div`
   box-sizing: border-box;
   margin-bottom: 30px;
   padding: 10px;
+  width: 500px;
   
   &:hover {
     background: linear-gradient(to right, var(--dirty-white) 10%, var(--white));
@@ -15,6 +16,10 @@ const Container = styled.div`
     h3 {
       color: var(--purple);
     }
+  }
+  
+  @media (max-width: 790px) {
+  width: auto;
   }
 `
 
@@ -69,7 +74,7 @@ export const MiniPost: FC<MiniPostProps> = props => {
     <BlogLink to={node.fields.slug}>
         <Date>{node.frontmatter.date}</Date>
       <Title>
-        · {node.frontmatter.title}{" "}
+        {node.frontmatter.title}{" "}
         <TimeToRead> / {node.timeToRead} min</TimeToRead>
       </Title>
       <Text>{node.frontmatter.spoiler}</Text>

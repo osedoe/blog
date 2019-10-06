@@ -27,11 +27,6 @@ export const query = graphql`
   }
 `
 
-const BlogIndexContainer = styled.div`
-  border-radius: 4px;
-  padding: 15px 30px;
-`
-
 const P = styled.p`
   color: var(--grey);
   font-family: 'Georgia', sans-serif;
@@ -41,12 +36,20 @@ const P = styled.p`
   opacity: .8;
 `
 
+const Main = styled.div`
+  display: grid;
+  grid-template-columns: 1fr;
+  justify-items: center;
+`
+
 export default ({ data }) => {
   return <Layout>
     <P>Personal blog about all things web and not so web</P>
-    <h2>{data.allMarkdownRemark.totalCount} Posts so far...</h2>
-    <BlogIndexContainer>
-      {data.allMarkdownRemark.edges.map(({ node }) => (<MiniPost data={node}/>))}
-    </BlogIndexContainer>
+    <Main>
+      <h2>{data.allMarkdownRemark.totalCount} Posts so far...</h2>
+      <div>
+        {data.allMarkdownRemark.edges.map(({ node }) => (<MiniPost data={node}/>))}
+      </div>
+    </Main>
   </Layout>
 }

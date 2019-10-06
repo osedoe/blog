@@ -14,15 +14,17 @@
 }
 
 html {
+    background: var(--white);
+    background: linear-gradient(to bottom right, var(--dirty-white) 30%, var(--pale-grey));
+
     font-family: 'Merriweather', 'Georgia', serif;
 }
 
 body {
-    background: linear-gradient(to bottom right, var(--dirty-white) 30%, var(--pale-grey));
     font-family: audiowide, 'audiowide', monospace;
     /*font-family: Monaco, monospace;*/
     margin: 0;
-    height: 100vh;
+    /*height: 100vh;*/
 }
 
 a {

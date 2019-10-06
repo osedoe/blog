@@ -5,10 +5,9 @@ import styled from "@emotion/styled"
 
 const Container = styled.div`
   margin: 0 auto;
-  max-width: 960px;
-  background: var(--white);
   min-height: 100vh;
-  min-width: 100vw;
+  //min-width: 100vw;
+  max-width: 960px;
 `
 
 const Wrapper = styled.div`

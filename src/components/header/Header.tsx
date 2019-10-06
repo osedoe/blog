@@ -3,7 +3,12 @@ import styled from "@emotion/styled"
 import { Logo } from "./Logo"
 import { Nav } from "./Nav"
 
-const Container = styled.header`
+const Container = styled.div`
+  display: flex;
+  justify-content: center;
+`;
+
+const Wrapper = styled.header`
   box-sizing: border-box;
   display: grid;
   grid-template-columns: auto auto;
@@ -12,11 +17,14 @@ const Container = styled.header`
   align-items: center;
   height: 60px;
   width: 100%;
+  max-width: 960px;
 `
 
 export const Header: FC = () => {
   return <Container>
-    <Logo/>
-    <Nav/>
+    <Wrapper>
+      <Logo/>
+      <Nav/>
+    </Wrapper>
   </Container>
 }

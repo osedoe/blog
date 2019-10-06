@@ -15,6 +15,8 @@ export const query = graphql`
 `
 
 const Wrapper = styled.div`
+  //max-width: 960px;
+  
   & div {
     font-family: 'Georgia', serif;
   }
