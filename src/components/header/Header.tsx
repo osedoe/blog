@@ -6,7 +6,7 @@ import { Nav } from "./Nav"
 const Container = styled.header`
   box-sizing: border-box;
   display: grid;
-  grid-template-columns: 180px auto;
+  grid-template-columns: auto auto;
   grid-template-rows: 60px;
   justify-content: space-between;
   align-items: center;

@@ -13,6 +13,7 @@ export const query = graphql`
 `
 
 const Title = styled(Link)`
+  margin-left: 30px;
   text-decoration: none;
 `
 
@@ -43,7 +44,7 @@ const H1 = styled.h1`
   //margin: 16px;
   opacity: .85;
   font-family: Audiowide, monospace;
-  font-size: 20px;
+  font-size: 28px;
   margin-right: 8px;
   position: relative;
   transition: all .4s;

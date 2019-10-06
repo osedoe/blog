@@ -16,6 +16,7 @@ const Li = styled(Link)`
   text-decoration: none;
   user-select: none;
   position: relative;
+  z-index: 2;
   
   :before {
       background: linear-gradient(to right, var(--purple), var(--pink));
@@ -30,9 +31,7 @@ const Li = styled(Link)`
       z-index: -1;
     }
   
-  
   &:hover {
-    //transform: scale(1.1);
     text-shadow: 0 0 2px var(--dirty-white);
   
     :before {

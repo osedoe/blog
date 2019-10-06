@@ -14,23 +14,32 @@ export const query = graphql`
   }
 `
 
-const Container = styled.div`
-
+const Wrapper = styled.div`
+  & div {
+    font-family: 'Georgia', serif;
+  }
+  
+  @media (max-width: 790px) {
+    & iframe {
+      width: 100%;
+    } 
+  }
+  
 `
 
 export interface BlogPostProps {
   data: any;
 }
 
-const BlogPost: FC<BlogPostProps> = ({data}) => {
+const BlogPost: FC<BlogPostProps> = ({ data }) => {
   const post = data.markdownRemark
 
   return <Layout>
-    <div>
+    <Wrapper>
       <h1>{post.frontmatter.title}</h1>
-      <div dangerouslySetInnerHTML={{ __html: post.html }} />
-    </div>
+      <div dangerouslySetInnerHTML={{ __html: post.html }}/>
+    </Wrapper>
   </Layout>
 }
 
-export default BlogPost;
+export default BlogPost
