@@ -28,7 +28,8 @@ export const query = graphql`
 `
 
 const Intro = styled.div`
-  margin: 0 10px 30px; 
+  margin: 0 10px 30px;
+  z-index: 1; 
 `
 
 const P = styled.p`

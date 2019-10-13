@@ -14,10 +14,6 @@ export const query = graphql`
 }
 `
 
-const Container = styled.div`
-
-`
-
 const TagWrapper = styled.div`
   display: inline-block;
 `
@@ -28,7 +24,7 @@ export const TagsContainer: FC = () => {
   return <>
     <h3>Topics</h3>
     <TagWrapper>
-      {data.allMarkdownRemark.group.map(tag => <TagPill data={tag}/>)}
+      {data.allMarkdownRemark.group.map((tag, index) => <TagPill key={index} data={tag}/>)}
     </TagWrapper>
   </>
 }

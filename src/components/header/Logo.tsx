@@ -17,23 +17,6 @@ const Title = styled(Link)`
   text-decoration: none;
 `
 
-// const H1 = styled.h1`
-//   color: var(--dark-grey);
-//   display: flex;
-//   flex-direction: row;
-//   font-size: 20px;
-//   height: 32px;
-//   pointer-events: none;
-//   position: relative;
-//   text-align: center;
-//   user-select: none;
-//   width: 160px;
-//
-//   @media (max-width: 1000px) {
-//     font-size: 16px;
-//     margin: 0;
-//   }
-// `
 const H1 = styled.h1`
   align-items: center;
   background: transparent;
@@ -41,7 +24,6 @@ const H1 = styled.h1`
   color: var(--dark-grey);
   display: flex;
   flex-direction: row;
-  //margin: 16px;
   opacity: .85;
   font-family: Audiowide, monospace;
   font-size: 32px;
@@ -58,7 +40,6 @@ const H1 = styled.h1`
     overflow: hidden;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    //color: linear;
     white-space: nowrap;
     width: 0;
     transition: width ease-in-out 0.4s;
@@ -70,6 +51,10 @@ const H1 = styled.h1`
     }
   }
   
+  @media (max-width: 1080px) {
+    font-size: 24px;
+  }
+  
   @media (max-width: 890px) {
     font-size: 24px;
     background: linear-gradient(to right, var(--purple), var(--pink));
@@ -79,7 +64,6 @@ const H1 = styled.h1`
     overflow: hidden;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    //color: linear;
     white-space: nowrap;
     width: 100%;
     transition: width ease-in-out 0.4s;

@@ -10,7 +10,7 @@ const Container = styled.div`
   height: 31px;
   margin: 5px 0;
   user-select: none;
-  width: fit-content;
+  width: max-content;
   
   
   :hover {

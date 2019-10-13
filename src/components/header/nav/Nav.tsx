@@ -51,6 +51,10 @@ const Li = styled(Link)`
   @media (max-width: 890px) {
     font-size: 16px;
   }
+  
+  @media (max-width: 890px) {
+    font-size: 16px;
+  }
 `;
 
 export const Nav: FC = () => {

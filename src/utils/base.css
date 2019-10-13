@@ -19,6 +19,7 @@ html {
     background: var(--white);
     background: linear-gradient(150deg, var(--white) 60%, var(--pale-grey));
     font-family: 'Merriweather', 'Georgia', serif;
+    overflow-x: hidden;
 }
 
 @media (max-width: 890px) {
@@ -29,9 +30,7 @@ html {
 
 body {
     font-family: audiowide, 'audiowide', monospace;
-    /*font-family: Monaco, monospace;*/
     margin: 0;
-    /*height: 100vh;*/
 }
 
 a {

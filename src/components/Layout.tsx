@@ -8,21 +8,29 @@ import { TagsContainer } from "./tags/TagsContainer"
 const Container = styled.div`
   display: grid;
   grid-template-columns: 2.5fr 1fr;
+  grid-template-rows: 60px auto;
   grid-template-areas: "header header"
                        "main     side"
-                       "footer footer"
   ;
   grid-gap: 60px;
   margin: 0 auto;
   min-height: 100vh;
   max-width: 960px;
   padding: 0 120px;
+  
+  @media (max-width: 960px) {
+    grid-template-columns: auto;
+    grid-template-areas: "header"
+                         "main"
+    ;
+    padding: 0 15px;
+  }
 `
 
 const MainContent = styled.div`
   grid-area: main;
   
-  @media (max-width: 790px) {
+  @media (max-width: 960px) {
     padding: 10px 30px;
   }
 `
@@ -32,16 +40,16 @@ const SideContent = styled.div`
 `
 
 export const Layout: FC = ({ children }) => {
-  const isMobile = useMedia("(max-width: 890px)")
+  const isMobile = useMedia("(max-width: 960px)")
 
   return <Container>
     <Header/>
     <MainContent>
       {children}
     </MainContent>
-    <SideContent>
+    {!isMobile && <SideContent>
       <TagsContainer/>
-    </SideContent>
+    </SideContent>}
     {!isMobile && <SocialBar/>}
   </Container>
 }
