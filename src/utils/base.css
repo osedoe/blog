@@ -15,9 +15,14 @@
 
 html {
     background: var(--white);
-    background: linear-gradient(to bottom right, var(--dirty-white) 30%, var(--pale-grey));
-
+    background: linear-gradient(150deg, var(--white) 60%, var(--pale-grey));
     font-family: 'Merriweather', 'Georgia', serif;
+}
+
+@media (max-width: 890px) {
+    html {
+        background: var(--white);
+    }
 }
 
 body {

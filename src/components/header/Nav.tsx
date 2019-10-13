@@ -11,7 +11,7 @@ const Container = styled.nav`
 
 const Li = styled(Link)`
   color: var(--dark-grey);
-  font-size: 18px;
+  font-size: 22px;
   padding: 15px 30px;
   text-decoration: none;
   user-select: none;
@@ -46,6 +46,10 @@ const Li = styled(Link)`
       transition: all 200ms ease-out;
       z-index: -1;
     }
+  }
+  
+  @media (max-width: 890px) {
+    font-size: 16px;
   }
 `;
 

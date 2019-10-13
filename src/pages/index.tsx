@@ -27,28 +27,34 @@ export const query = graphql`
   }
 `
 
+const Intro = styled.div`
+  margin: 10px 10px 30px; 
+`
+
 const P = styled.p`
   color: var(--grey);
   font-family: 'Georgia', sans-serif;
   font-style: italic;
-  padding: 30px;
-  text-align: center;
   opacity: .8;
+  padding: 3px;
+  margin: 0;
 `
 
 const Main = styled.div`
   display: grid;
   grid-template-columns: 1fr;
-  justify-items: center;
 `
 
 export default ({ data }) => {
   return <Layout>
-    <P>Personal blog about all things web and not so web</P>
+    <Intro>
+      <P>Hola! I'm Ose, a Full Stack developer working at <a href="http://www.nologis.com/">Nologis</a>.</P>
+      <P>This is my personal blog, where I write about all things web and not so web.</P>
+    </Intro>
     <Main>
-      <h2>{data.allMarkdownRemark.totalCount} Posts so far...</h2>
+      {/*<h2>{data.allMarkdownRemark.totalCount} Posts so far...</h2>*/}
       <div>
-        {data.allMarkdownRemark.edges.map(({ node }) => (<MiniPost data={node}/>))}
+        {data.allMarkdownRemark.edges.map(({ node }, index) => (<MiniPost key={index} data={node}/>))}
       </div>
     </Main>
   </Layout>

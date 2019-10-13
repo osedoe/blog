@@ -44,7 +44,7 @@ const H1 = styled.h1`
   //margin: 16px;
   opacity: .85;
   font-family: Audiowide, monospace;
-  font-size: 28px;
+  font-size: 32px;
   margin-right: 8px;
   position: relative;
   transition: all .4s;
@@ -69,7 +69,23 @@ const H1 = styled.h1`
       width: 100%;
     }
   }
-`;
+  
+  @media (max-width: 890px) {
+    font-size: 24px;
+    background: linear-gradient(to right, var(--purple), var(--pink));
+    content: attr(data-letters);
+    position: absolute;
+    z-index: 2;
+    overflow: hidden;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    //color: linear;
+    white-space: nowrap;
+    width: 100%;
+    transition: width ease-in-out 0.4s;
+    margin: 0;
+  }
+`
 
 export const Logo = () => {
   const data = useStaticQuery(
@@ -81,7 +97,7 @@ export const Logo = () => {
           }
         }
       }
-    `
+    `,
   )
 
   return <Title to="/"><H1 data-letters="_Idle hands _build nothing">{data.site.siteMetadata.title}</H1></Title>
