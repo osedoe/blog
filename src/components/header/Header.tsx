@@ -6,6 +6,7 @@ import useMedia from "../../utils/useMedia"
 
 const Container = styled.div`
   display: flex;
+  grid-area: header;
   justify-content: center;
   
   @media (max-width: 890px) {

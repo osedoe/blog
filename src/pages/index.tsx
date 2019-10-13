@@ -28,7 +28,7 @@ export const query = graphql`
 `
 
 const Intro = styled.div`
-  margin: 10px 10px 30px; 
+  margin: 0 10px 30px; 
 `
 
 const P = styled.p`
@@ -48,7 +48,7 @@ const Main = styled.div`
 export default ({ data }) => {
   return <Layout>
     <Intro>
-      <P>Hola! I'm Ose, a Full Stack developer working at <a href="http://www.nologis.com/">Nologis</a>.</P>
+      <P>Hola! I'm Ose, a Full Stack developer.</P>
       <P>This is my personal blog, where I write about all things web and not so web.</P>
     </Intro>
     <Main>

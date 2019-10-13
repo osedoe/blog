@@ -1,6 +1,7 @@
 ---
 title: "Here is an example of a post"
 date: "2017-08-10"
+tags: ["tag 3"]
 ---
 
 You touch my tralala.

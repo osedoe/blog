@@ -8,7 +8,9 @@ export const query = graphql`
     markdownRemark(fields: { slug: { eq: $slug } }) {
       html
       frontmatter {
-        title
+        title,
+        date(formatString: "DD MMMM, YYYY"),
+        tags
       }
     }
   }
@@ -26,7 +28,11 @@ const Wrapper = styled.div`
       width: 100%;
     } 
   }
-  
+`
+
+const H2 = styled.h2`
+  color: var(--purple);
+  font-size: 26px;
 `
 
 export interface BlogPostProps {
@@ -38,10 +44,13 @@ const BlogPost: FC<BlogPostProps> = ({ data }) => {
 
   return <Layout>
     <Wrapper>
-      <h1>{post.frontmatter.title}</h1>
+      <H2>_{post.frontmatter.title}</H2>
+      Published on {post.frontmatter.date}
+      {post.frontmatter.tags}
       <div dangerouslySetInnerHTML={{ __html: post.html }}/>
     </Wrapper>
   </Layout>
 }
 
+BlogPost.displayName = "Post"
 export default BlogPost

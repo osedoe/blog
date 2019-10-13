@@ -3,20 +3,27 @@ import styled from "@emotion/styled"
 import { Link } from "gatsby"
 
 const Container = styled.div`
-background: transparent;
-  border-left: 2px solid transparent;
+  background: transparent;
+  border-left: 4px solid transparent;
   box-sizing: border-box;
   margin-bottom: 30px;
   padding: 10px;
   width: 500px;
   
   &:hover {
-    background: linear-gradient(to right, var(--dirty-white) 10%, transparent);
-    border-left: 2px solid black;
-    transition: all 600ms ease-in-out;
+    background: linear-gradient(to right, var(--purple-alpha) 66%, transparent 90%);
+    border-radius: 0 50px 50px 0;
+    border-left: 4px solid var(--purple);
+    transition: all 300ms ease-in-out;
     
-    h3 {
+    h2 {
       color: var(--purple);
+      
+    }
+    
+    &:active, :focus {
+      transform: translateX(500px);
+      opacity: 0;
     }
   }
   

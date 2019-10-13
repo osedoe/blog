@@ -39,7 +39,7 @@ const Li = styled(Link)`
       border-radius: 4px;
       content: '';
       position: absolute;
-      top: 50%;
+      top: 52%;
       left: 15%;
       height: 30%;
       width: 70%;

@@ -2,7 +2,7 @@
   "extends": [
     "react-app",
     "plugin:jsx-a11y/recommended"
-    ],
+  ],
   "plugins": [
     "no-only-tests"
   ],
@@ -13,6 +13,6 @@
       2,
       "all"
     ],
-    "no-only-tests/no-only-tests": "error"
+    "no-only-tests/no-only-tests": "error",
   }
 }
