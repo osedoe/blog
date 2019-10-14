@@ -17,7 +17,7 @@ export const query = graphql`
 `
 
 const Wrapper = styled.div`
-  //max-width: 960px;
+  color: var(--dirty-white);
   
   & div {
     font-family: 'Georgia', serif;
@@ -35,6 +35,16 @@ const H2 = styled.h2`
   font-size: 26px;
 `
 
+const Date = styled.span`
+  font-family: 'Georgia', serif;
+`;
+
+const Hr = styled.hr`
+  border: 2px solid var(--pink);
+  border-radius: 4px;
+  margin-bottom: 30px;
+`;
+
 export interface BlogPostProps {
   data: any;
 }
@@ -45,9 +55,10 @@ const BlogPost: FC<BlogPostProps> = ({ data }) => {
   return <Layout>
     <Wrapper>
       <H2>_{post.frontmatter.title}</H2>
-      Published on {post.frontmatter.date}
-      {post.frontmatter.tags}
+      <Date>Published on {post.frontmatter.date}</Date>
+      <Hr/>
       <div dangerouslySetInnerHTML={{ __html: post.html }}/>
+      {post.frontmatter.tags}
     </Wrapper>
   </Layout>
 }

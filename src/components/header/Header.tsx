@@ -20,7 +20,7 @@ const Wrapper = styled.header`
   align-items: center;
   height: 60px;
   width: 100%;
-  max-width: 960px;
+  max-width: 1080px;
 `
 
 export const Header: FC = () => {

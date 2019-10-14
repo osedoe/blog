@@ -28,8 +28,11 @@ export const query = graphql`
 `
 
 const Intro = styled.div`
-  margin: 0 10px 30px;
-  z-index: 1; 
+  margin: 10px 20px 30px;
+  
+  //@media (max-width: 790px) {
+  //  margin: 0 0 30px;
+  //} 
 `
 
 const P = styled.p`
@@ -37,7 +40,7 @@ const P = styled.p`
   font-family: 'Georgia', sans-serif;
   font-style: italic;
   opacity: .8;
-  padding: 3px;
+  padding: 3px 0;
   margin: 0;
 `
 

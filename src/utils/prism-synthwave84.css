@@ -5,9 +5,14 @@ Conversion: Bram de Haan (http://atelierbram.github.io/Base2Tone-prism/output/pr
 Generated with Base16 Builder (https://github.com/base16-builder/base16-builder)
 */
 
+.gatsby-highlight {
+    border-radius: 10px;
+    box-shadow: 0 0 14px var(--pink-alpha);
+}
+
 code[class*="language-"],
 pre[class*="language-"] {
-    border-radius: 8px;
+    border-radius: 10px;
     font-family: Consolas, Menlo, Monaco, "Andale Mono WT", "Andale Mono", "Lucida Console", "Lucida Sans Typewriter", "DejaVu Sans Mono", "Bitstream Vera Sans Mono", "Liberation Mono", "Nimbus Mono L", "Courier New", Courier, monospace;
     font-size: 14px;
     line-height: 1.375;

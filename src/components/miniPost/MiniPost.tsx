@@ -4,31 +4,28 @@ import { Link } from "gatsby"
 
 const Container = styled.div`
   background: transparent;
-  border-left: 4px solid transparent;
+  border-radius: 10px;
   box-sizing: border-box;
   margin-bottom: 30px;
-  padding: 10px;
-  width: 500px;
+  padding: 20px;
   
   &:hover {
-    background: linear-gradient(to right, var(--purple-alpha) 66%, transparent 90%);
-    border-radius: 0 50px 50px 0;
-    border-left: 4px solid var(--purple);
+    background: linear-gradient(to bottom right, var(--purple-alpha) , var(--pink-alpha));
     transition: all 300ms ease-in-out;
     
     h2 {
-      color: var(--purple);
-      
+      color: var(--white);
+      text-decoration: underline;
+    }
+    
+    span {
+      color: var(--pale-grey)
     }
     
     &:active, :focus {
       transform: translateX(500px);
       opacity: 0;
     }
-  }
-  
-  @media (max-width: 790px) {
-  width: auto;
   }
 `
 
@@ -42,10 +39,17 @@ const Date = styled.small`
   font-style: italic;
 `
 
-const Title = styled.h2`
+const Title = styled.div`
   color: var(--pink);
+  display: flex;
+  align-items: center;
   font-size: 26px;
   margin: 3px 0 6px;
+  
+  h2 {
+    font-size: 1.3em;
+    margin: 0;
+  }
   
   @media (max-width: 890px) {
     font-size: 20px;
@@ -55,10 +59,13 @@ const Title = styled.h2`
 const TimeToRead = styled.span`
   color: var(--purple);
   font-family: 'Georgia', serif;
-  font-size: 14px;
+  font-size: .8em;
+  width: 100px;
+  margin-left: 10px;
 `
 
 const Text = styled.p`
+  color: var(--pale-grey);
   font-family: 'Georgia', serif;
   margin: 0;
 `
@@ -87,7 +94,7 @@ export const MiniPost: FC<MiniPostProps> = props => {
     <BlogLink to={node.fields.slug}>
       <Date>{node.frontmatter.date}</Date>
       <Title>
-        {node.frontmatter.title}{" "}
+        <h2>{node.frontmatter.title}{" "}</h2>
         <TimeToRead> / {node.timeToRead} min</TimeToRead>
       </Title>
       <Text>{node.frontmatter.spoiler}</Text>

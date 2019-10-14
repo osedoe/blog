@@ -5,7 +5,7 @@ import { faGithubSquare, faLinkedin, faTwitterSquare } from "@fortawesome/free-b
 import { faEnvelopeSquare } from "@fortawesome/free-solid-svg-icons"
 
 const Wrapper = styled.div`
-  color: var(--black);
+  color: var(--dirty-white);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -21,7 +21,7 @@ const Wrapper = styled.div`
     content: '';
     height: 201px;
     width: 2px;
-    background-color: var(--black);
+    background-color: var(--dirty-white);
     margin-bottom: 12px;
     margin-right: 2px;
     border-radius: 2px;
@@ -31,7 +31,7 @@ const Wrapper = styled.div`
     content: "";
     height: 121px;
     width: 2px;
-    background-color: var(--black);
+    background-color: var(--dirty-white);
     margin-top: 12px;
     margin-right: 2px;
     border-radius: 2px;

@@ -2,7 +2,7 @@ import React, { FC } from "react"
 import styled from "@emotion/styled"
 
 const Container = styled.div`
-  background: linear-gradient(to bottom, var(--purple) 50%, var(--pink) 51%);
+  //background: var(--purple);
   border-radius: 10px;
   box-sizing: border-box;
   color: white;
@@ -11,10 +11,10 @@ const Container = styled.div`
   margin: 5px 0;
   user-select: none;
   width: max-content;
-  
+  transition: all 200ms ease-in-out;
   
   :hover {
-    background: linear-gradient(to bottom, var(--pink) 50%, var(--purple) 51%);
+    background: var(--purple);
     cursor: pointer;
     
     span:first-of-type {
@@ -22,21 +22,26 @@ const Container = styled.div`
     }
     span:last-of-type {
       background: var(--purple);
+      display: inline-block;
+      opacity: 1;
     }
   }
 `
 
 const LeftPart = styled.span`
   background: var(--purple);
-  border-radius: 10px 0 17px 10px;
+  border-radius: 10px;
   padding: 5px 15px;
+  z-index: 1;
 `
 
 const RightPart = styled.span`
   background: var(--pink);
-  border-radius: 17px 10px 10px 0;
+  border-radius: 0 10px 10px 0;
   box-sizing: border-box;
+  opacity: 0;
   padding: 5px 15px;
+  margin-left: -5px;
 `
 
 export interface TagPillProps {

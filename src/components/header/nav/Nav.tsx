@@ -10,7 +10,7 @@ const Container = styled.nav`
 `;
 
 const Li = styled(Link)`
-  color: var(--dark-grey);
+  color: var(--dirty-white);
   font-size: 22px;
   padding: 15px 30px;
   text-decoration: none;
@@ -32,7 +32,8 @@ const Li = styled(Link)`
     }
   
   &:hover {
-    text-shadow: 0 0 2px var(--dirty-white);
+    color: var(--dirty-white);
+    //text-shadow: 0 0 2px var(--dirty-white);
   
     :before {
       background: linear-gradient(to right, var(--purple), var(--pink));

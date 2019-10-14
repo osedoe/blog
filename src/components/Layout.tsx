@@ -6,6 +6,7 @@ import useMedia from "../utils/useMedia"
 import { TagsContainer } from "./tags/TagsContainer"
 
 const Container = styled.div`
+  color: var(--dirty-white);
   display: grid;
   grid-template-columns: 2.5fr 1fr;
   grid-template-rows: 60px auto;
@@ -15,7 +16,7 @@ const Container = styled.div`
   grid-gap: 60px;
   margin: 0 auto;
   min-height: 100vh;
-  max-width: 960px;
+  max-width: 1080px;
   padding: 0 120px;
   
   @media (max-width: 960px) {

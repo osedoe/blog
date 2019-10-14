@@ -21,39 +21,34 @@ const H1 = styled.h1`
   align-items: center;
   background: transparent;
   box-sizing: border-box;
-  color: var(--dark-grey);
+  background: linear-gradient(to right, var(--purple), var(--pink));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
   display: flex;
   flex-direction: row;
   opacity: .85;
   font-family: Audiowide, monospace;
-  font-size: 32px;
-  margin-right: 8px;
+  font-size: 2.3em;
+  margin: 0 8px 0 0;
   position: relative;
   transition: all .4s;
   user-select: none;
   
-  :before {
-    background: linear-gradient(to right, var(--purple), var(--pink));
-    content: attr(data-letters);
-    position: absolute;
-    z-index: 2;
-    overflow: hidden;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    white-space: nowrap;
-    width: 0;
-    transition: width ease-in-out 0.4s;
+  :hover {
+    transform: scale(1.1);
   }
   
-  :hover {
-    :before {
-      width: 100%;
+  @media (max-width: 1150px) {
+    font-size: 1.8em;
+  }
+  
+  @media (max-width: 1020px) {
+    font-size: 1.4em;
+    :hover {
+      transform: none;
     }
   }
   
-  @media (max-width: 1080px) {
-    font-size: 24px;
-  }
   
   @media (max-width: 890px) {
     font-size: 24px;
