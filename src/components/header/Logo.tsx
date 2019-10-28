@@ -34,10 +34,6 @@ const H1 = styled.h1`
   transition: all .4s;
   user-select: none;
   
-  :hover {
-    transform: scale(1.1);
-  }
-  
   @media (max-width: 1150px) {
     font-size: 1.8em;
   }

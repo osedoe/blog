@@ -8,10 +8,41 @@ const Container = styled.div`
   box-sizing: border-box;
   margin-bottom: 30px;
   padding: 20px;
+  position: relative;
+  :before {
+      background: linear-gradient(to right, var(--purple), var(--pink));
+      border-radius: 4px;
+      content: '';
+      height: 0;
+      left: 25%;
+      position: absolute;
+      top: 50%;
+      transition: all 500ms ease-in-out;
+      width: 50%;
+      z-index: -1;
+    }
   
   &:hover {
-    background: linear-gradient(to bottom right, var(--purple-alpha) , var(--pink-alpha));
+    cursor: pointer;
     transition: all 300ms ease-in-out;
+  
+    small {
+      text-decoration: underline;
+    }
+  
+    :before {
+      background: linear-gradient(to right, var(--purple), var(--pink));
+      border-radius: 8px;
+      content: '';
+      position: absolute;
+      top: 69px;
+      left: 0;
+      height: 50%;
+      width: 100%;
+      transition: all 200ms ease-out;
+      opacity: .6;
+      z-index: -1;
+    }
     
     h2 {
       color: var(--white);
@@ -37,6 +68,10 @@ const Date = styled.small`
   color: var(--grey);
   font-family: 'Georgia', serif;
   font-style: italic;
+  
+  :hover {
+  text-decoration: underline;
+  }
 `
 
 const Title = styled.div`
