@@ -6,7 +6,7 @@
 
 module.exports = {
   siteMetadata: {
-    title: "_Idle hands _build nothing",
+    title: "_Ose _Diaz",
     author: "Ose Diaz",
     description: "Personal blog by Ose Diaz.",
     siteUrl: "https://osediaz.com",
