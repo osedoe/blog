@@ -29,7 +29,7 @@ const A = styled.a`
 
 export default () => {
   return <Layout>
-    <Img src/>
+    {/* TODO: Add images */}
 
     <H3>Foreword</H3>
     <P>My name is Jose Diaz-Gonzalez, although people know me as Ose. And I am a remote Full Stack Web Developer based currently in Tenerife, Spain.</P>
