@@ -3,6 +3,7 @@ import { Layout } from "../components/Layout"
 import styled from "@emotion/styled"
 
 const NOLOGIS_SITE = "http://www.nologis.com/"
+const WEB_DEV_NOTES = "https://github.com/osedoe/Web-Development-Notes"
 
 const Img = styled.img`
 
@@ -22,7 +23,6 @@ const P = styled.p`
 
 const A = styled.a`
   color: var(--grey);
-  text-transform: capitalize;
 `
 
 export default () => {
@@ -40,9 +40,9 @@ export default () => {
     <P>Before finishing my studies, I had the immense fortune that one of my teachers at the time set his eyes on me and hired me for his company, <A href={NOLOGIS_SITE}>Nologis</A> as a FullStack developer.</P>
 
     <H3>The Developer</H3>
-    <P>I am truly passionate about the craft of programming and problem-solving, and love all things web and the community around. This has led me to occasionally give talks and mentor people that are starting out. It's my way to payback for being in such an amazing field.</P>
-    <P>I am a firm believer of OSS and all the code that I write off work is free to check and reuse by anyone. I also keep a repository with all the notes that I take when I am learning something new and you are welcome to use it or participate on it.</P>
-    <P>I specialize in the Front-End, ReactJS and NodeJS, but I will happily dive into any language or unknown library/framework as well as some DevOps work despite my love for JavaScript.</P>
+    <P>I am truly passionate about the craft of programming and problem-solving, and love all things web and the community around. This has led me to occasionally give talks and mentor people that are starting out. It's my way to payback for being in such an amazing field, and I hope to eventually make teaching an important part of my life.</P>
+    <P>I am a firm believer of OSS and all the code that I write off work is free to check and reuse by anyone. I also keep a repository with all the notes that I take when I am learning something new and you are welcome to use it or participate on it <A href={WEB_DEV_NOTES}>here</A> -although beware you may find some notes in Spanish 😝.</P>
+    <P>My field of expertise is JavaScript. Right now, I'm working with ReactJS, NodeJS, MongoDB and some basic AWS. But I have used multiple programming languages in the past and I will happily dive into anything new given the chance.</P>
 
     <H3>The Person</H3>
     <P>When I'm not building websites, going through CodeWars or promoting OSS -I like playing indie games, cooking, and playing pool with a pint of beer.</P>
