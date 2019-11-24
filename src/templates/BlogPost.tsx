@@ -2,6 +2,7 @@ import React, { FC } from "react"
 import styled from "@emotion/styled"
 import { graphql } from "gatsby"
 import { Layout } from "../components/Layout"
+import { MainBody } from "../components/post/MainBody"
 
 export const query = graphql`
   query($slug: String!) {
@@ -18,10 +19,6 @@ export const query = graphql`
 
 const Wrapper = styled.div`
   color: var(--dirty-white);
-  
-  & div {
-    font-family: 'Georgia', serif;
-  }
   
   @media (max-width: 790px) {
     & iframe {
@@ -45,6 +42,11 @@ const Hr = styled.hr`
   margin-bottom: 30px;
 `;
 
+const TagWrapper = styled.div`
+  padding: 16px 16px 48px;
+  font-family: audiowide, 'audiowide', monospace;
+`;
+
 export interface BlogPostProps {
   data: any;
 }
@@ -57,8 +59,11 @@ const BlogPost: FC<BlogPostProps> = ({ data }) => {
       <H2>_{post.frontmatter.title}</H2>
       <Date>Published on {post.frontmatter.date}</Date>
       <Hr/>
-      <div dangerouslySetInnerHTML={{ __html: post.html }}/>
-      {post.frontmatter.tags}
+      <MainBody data={post}/>
+      {/* TODO: Add tags related , join newsletter and share buttons */}
+      {/*<TagWrapper>*/}
+        {/*{post.frontmatter.tags.map(tag => <Tag>{tag}</Tag>)}*/}
+      {/*</TagWrapper>*/}
     </Wrapper>
   </Layout>
 }

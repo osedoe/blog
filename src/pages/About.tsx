@@ -42,6 +42,15 @@ const P = styled.p`
   font-family: 'Georgia', serif;
 `
 
+const Ul = styled.ul`
+  font-family: 'Georgia', serif;
+  color: var(--pale-grey);
+`
+
+const Li = styled.li`
+  
+`
+
 const A = styled.a`
   color: var(--grey);
 `
@@ -69,12 +78,12 @@ export default () => {
     <H3>The Person</H3>
     <P>Not everything in life is programming. We have give room to other hobbies.</P>
     <P>I have various ways to disconnect from all the hustle that we are constantly into:</P>
-    <ul>
-      <li>First of all, <strong>cooking</strong>. Got it from my family -Spanish, obviously-. I love to always being experimenting in the kitchen and try mixing different flavours.</li>
+    <Ul>
+      <Li>First of all, <strong>cooking</strong>. Got it from my family -Spanish, obviously-. I love to always being experimenting in the kitchen and try mixing different flavours.</Li>
       <li><strong>Going out</strong>. Either meaning going for a walk at the end of the day with my dog Suka, a weekend getaway to the british countryside, or even better -travelling with my partner whenever is possible. I like to escape the noise of big cities quite often and enjoy nature.</li>
       {/* TODO: To review */}
       <li>Play indie games. I'm a fan of everything 8bit/16bit from years ago. And I love that it has gone back to trend and I can enjoy so many titles that bring me back such good memories. Also bonus points for the Nintendo Switch and opening a new cooperative world with the misses!</li>
-    </ul>
+    </Ul>
       <P>When I'm not building websites, going through CodeWars or promoting OSS -I like playing indie games, cooking, and playing pool with a pint of beer.</P>
       <P>Oh, also I'm a dog lover and the proud father of Suka, a half a staffy half dalmatian dog.
       </P>

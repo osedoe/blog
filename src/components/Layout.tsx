@@ -4,6 +4,7 @@ import { SocialBar } from "./social/SocialBar"
 import styled from "@emotion/styled"
 import useMedia from "../utils/useMedia"
 import { TagsContainer } from "./tags/TagsContainer"
+import { Footer } from "./footer/Footer"
 
 const Container = styled.div`
   color: var(--dirty-white);
@@ -17,7 +18,8 @@ const Container = styled.div`
   margin: 0 auto;
   min-height: 100vh;
   max-width: 1080px;
-  padding: 0 120px;
+  padding: 0 120px 200px;
+  position: relative;
   
   @media (max-width: 960px) {
     grid-template-columns: auto;
@@ -52,6 +54,7 @@ export const Layout: FC = ({ children }) => {
       <TagsContainer/>
     </SideContent>}
     {!isMobile && <SocialBar/>}
+    <Footer/>
   </Container>
 }
 

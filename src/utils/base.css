@@ -19,7 +19,7 @@
 html {
     background: var(--black);
     background: linear-gradient(150deg, var(--black), #333);
-    font-family: 'Merriweather', 'Georgia', serif;
+    font-family: 'Georgia', serif;
     overflow-x: hidden;
 }
 

@@ -17,6 +17,8 @@ const Wrapper = styled.div`
   opacity: .85;
   overflow-y: hidden;
   width: 40px;
+  z-index: 2;
+  
   :before {
     content: '';
     height: 201px;

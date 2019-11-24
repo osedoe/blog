@@ -2,8 +2,7 @@ import React, { FC } from "react"
 import styled from "@emotion/styled"
 
 const Container = styled.div`
-  //background: var(--purple);
-  border-radius: 10px;
+    border-radius: 10px;
   box-sizing: border-box;
   color: white;
   display: flex;
