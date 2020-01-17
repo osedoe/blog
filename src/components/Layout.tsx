@@ -1,10 +1,9 @@
 import React, { FC } from "react"
 import { Header } from "./header/Header"
-import { SocialBar } from "./social/SocialBar"
+import { DesktopSocialBar } from "./social/DesktopSocialBar"
 import styled from "@emotion/styled"
 import useMedia from "../utils/useMedia"
 import { TagsContainer } from "./tags/TagsContainer"
-import { Footer } from "./footer/Footer"
 
 const Container = styled.div`
   color: var(--dirty-white);
@@ -27,6 +26,7 @@ const Container = styled.div`
                          "main"
     ;
     padding: 0 15px;
+    height: 100vh;
   }
 `
 
@@ -53,8 +53,7 @@ export const Layout: FC = ({ children }) => {
     {!isMobile && <SideContent>
       <TagsContainer/>
     </SideContent>}
-    {!isMobile && <SocialBar/>}
-    <Footer/>
+    <DesktopSocialBar/>
   </Container>
 }
 

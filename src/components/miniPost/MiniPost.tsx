@@ -1,6 +1,7 @@
 import React, { FC } from "react"
 import styled from "@emotion/styled"
 import { Link } from "gatsby"
+import useMedia from "../../utils/useMedia"
 
 const Container = styled.div`
   background: transparent;
@@ -124,13 +125,15 @@ interface NodeModel {
 }
 
 export const MiniPost: FC<MiniPostProps> = props => {
-  const { data: node } = props
+  const { data: node } = props;
+  const isMobile = useMedia("(max-width: 960px)")
+
   return <Container key={node.id}>
     <BlogLink to={node.fields.slug}>
       <Date>{node.frontmatter.date}</Date>
       <Title>
         <h2>{node.frontmatter.title}{" "}</h2>
-        <TimeToRead> / {node.timeToRead} min</TimeToRead>
+        {!isMobile && <TimeToRead> / {node.timeToRead} min</TimeToRead>}
       </Title>
       <Text>{node.frontmatter.spoiler}</Text>
     </BlogLink>

@@ -2,7 +2,7 @@ import React from "react"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import styled from "@emotion/styled"
 import { faGithubSquare, faLinkedin, faTwitterSquare } from "@fortawesome/free-brands-svg-icons"
-import { faEnvelopeSquare } from "@fortawesome/free-solid-svg-icons"
+import { faEnvelopeSquare, faRssSquare } from "@fortawesome/free-solid-svg-icons"
 
 const Wrapper = styled.div`
   color: var(--dirty-white);
@@ -45,13 +45,39 @@ const Wrapper = styled.div`
     transition: all 400ms;
     opacity: 1;
   }
+  
+  @media (max-width: 960px) {
+    flex-direction: row;
+    left: 0;
+    overflow-x: hidden;
+    width: 90%;
+    margin-bottom: 9px;
+    
+    a:not(:last-child) {
+      margin-right: 12px;
+    }
+    
+    :before {
+      height: 2px;
+      width: 201px;
+      margin: 0 12px 0 0;
+    }  
+    
+    
+    :after {
+      height: 2px;
+      width: 50%;
+      margin: 0 0 0 12px;
+    }
+  }
 `
 
-export const SocialBar = () => {
+export const DesktopSocialBar = () => {
   return <Wrapper>
     <a href="mailto:jose.diazg@protonmail.com"><FontAwesomeIcon icon={faEnvelopeSquare}/></a>
     <a href="https://github.com/osedoe"><FontAwesomeIcon icon={faGithubSquare}/></a>
     <a href="https://twitter.com/Osedoe?lang=en"><FontAwesomeIcon icon={faTwitterSquare}/></a>
     <a href="https://linkedin.com/in/jose-diaz-gonzalez-696067107"><FontAwesomeIcon icon={faLinkedin}/></a>
+    <a href="/rss.xml"><FontAwesomeIcon icon={faRssSquare}/></a>
   </Wrapper>
 }
