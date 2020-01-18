@@ -47,11 +47,21 @@ const Wrapper = styled.div`
   }
   
   @media (max-width: 960px) {
+    background: linear-gradient(
+      to bottom,
+      transparent 0%,
+      var(--dark-grey) 5%,
+      var(--dark-grey) 95%,
+      transparent 100%
+    );
     flex-direction: row;
     left: 0;
+    bottom: -2px;
     overflow-x: hidden;
-    width: 90%;
-    margin-bottom: 9px;
+    opacity: .95;
+    width: 100%;
+    padding-top: 9px;
+    padding-bottom: 9px;
     
     a:not(:last-child) {
       margin-right: 12px;
@@ -72,7 +82,7 @@ const Wrapper = styled.div`
   }
 `
 
-export const DesktopSocialBar = () => {
+export const SocialBar = () => {
   return <Wrapper>
     <a href="mailto:jose.diazg@protonmail.com"><FontAwesomeIcon icon={faEnvelopeSquare}/></a>
     <a href="https://github.com/osedoe"><FontAwesomeIcon icon={faGithubSquare}/></a>

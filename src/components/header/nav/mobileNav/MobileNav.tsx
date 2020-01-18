@@ -35,6 +35,7 @@ const NavMenu = styled.div`
   height: 100vh;
   justify-content: center;
   list-style: none;
+  overflow: hidden;
   position: absolute;
   right: 0;
   text-shadow: 2px 2px 2px black;

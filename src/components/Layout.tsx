@@ -1,6 +1,6 @@
 import React, { FC } from "react"
 import { Header } from "./header/Header"
-import { DesktopSocialBar } from "./social/DesktopSocialBar"
+import { SocialBar } from "./social/SocialBar"
 import styled from "@emotion/styled"
 import useMedia from "../utils/useMedia"
 import { TagsContainer } from "./tags/TagsContainer"
@@ -26,16 +26,12 @@ const Container = styled.div`
                          "main"
     ;
     padding: 0 15px;
-    height: 100vh;
+    //height: 100vh;
   }
 `
 
 const MainContent = styled.div`
   grid-area: main;
-  
-  @media (max-width: 960px) {
-    padding: 10px 30px;
-  }
 `
 
 const SideContent = styled.div`
@@ -53,7 +49,7 @@ export const Layout: FC = ({ children }) => {
     {!isMobile && <SideContent>
       <TagsContainer/>
     </SideContent>}
-    <DesktopSocialBar/>
+    <SocialBar/>
   </Container>
 }
 

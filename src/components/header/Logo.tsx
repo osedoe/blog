@@ -56,7 +56,6 @@ const H1 = styled.h1`
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     white-space: nowrap;
-    width: 100%;
     transition: width ease-in-out 0.4s;
     margin: 0;
   }
@@ -75,5 +74,9 @@ export const Logo = () => {
     `,
   )
 
-  return <Title to="/"><H1 data-letters="_Idle hands _build nothing">{data.site.siteMetadata.title}</H1></Title>
+  return <Title to="/">
+    <H1 data-letters="_Idle hands _build nothing">
+      {data.site.siteMetadata.title}
+    </H1>
+  </Title>
 }

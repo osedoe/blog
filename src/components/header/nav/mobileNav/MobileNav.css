@@ -54,7 +54,7 @@
     box-shadow: -3px 0 8px black;
     color: var(--white);
     opacity: 1;
-    position: absolute;
+    position: fixed;
     transition: all .5s ease-in-out;
     z-index: 1;
     width: 100vw;
