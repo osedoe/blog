@@ -43,6 +43,10 @@ const Container = styled.div`
       transition: all 200ms ease-out;
       opacity: .6;
       z-index: -1;
+      
+      @media (max-width: 960px) {
+        top: 65px;
+      }
     }
     
     h2 {

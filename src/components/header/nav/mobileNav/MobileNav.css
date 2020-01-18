@@ -1,7 +1,8 @@
 .burger {
     background: var(--purple);
     margin: 6px;
-    position: relative;
+    position: fixed;
+    right: 15px;
     height: 4px;
     width: 25px;
     transition: all .5s ease-in-out;
@@ -31,6 +32,7 @@
     transform: scale(1.4) rotate(135deg);
     transition: all .5s ease-in-out;
     z-index: 51;
+    position: fixed;
 }
 
 .burger.active:before {

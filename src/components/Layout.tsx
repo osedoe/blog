@@ -1,9 +1,10 @@
-import React, { FC } from "react"
+import React, { FC, useContext } from "react"
 import { Header } from "./header/Header"
 import { SocialBar } from "./social/SocialBar"
 import styled from "@emotion/styled"
 import useMedia from "../utils/useMedia"
 import { TagsContainer } from "./tags/TagsContainer"
+import { BlogContext } from "../context/Context"
 
 const Container = styled.div`
   color: var(--dirty-white);
@@ -26,7 +27,6 @@ const Container = styled.div`
                          "main"
     ;
     padding: 0 15px;
-    //height: 100vh;
   }
 `
 
@@ -39,6 +39,7 @@ const SideContent = styled.div`
 `
 
 export const Layout: FC = ({ children }) => {
+  const { menu: { isMenuOpen } } = useContext(BlogContext)
   const isMobile = useMedia("(max-width: 960px)")
 
   return <Container>
@@ -49,7 +50,7 @@ export const Layout: FC = ({ children }) => {
     {!isMobile && <SideContent>
       <TagsContainer/>
     </SideContent>}
-    <SocialBar/>
+    {!isMenuOpen && <SocialBar/>}
   </Container>
 }
 

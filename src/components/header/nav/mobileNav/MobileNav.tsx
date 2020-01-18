@@ -1,12 +1,18 @@
-import React, { useState } from "react"
+import React, { useContext } from "react"
 import { Link } from "gatsby"
 import styled from "@emotion/styled"
 import "./MobileNav.css"
+import { BlogContext } from "../../../../context/Context"
+
+const BurgerWrapper = styled.div`
+  cursor: pointer;
+  height: 50px;
+  width: 50px;
+`;
 
 const NavBurger = styled.div`
   box-sizing: border-box;
   color: var(--white);
-  cursor: pointer;
   font-family: Audiowide, monospace;
   font-size: 20px;
   display: flex;
@@ -87,14 +93,17 @@ const StyledLink = styled(Link)`
 `
 
 export const MobileNav = () => {
-  const [display, setDisplay] = useState(false)
-  const toggleNav = () => setDisplay(!display)
+  const { menu: { isMenuOpen, setIsMenuOpen } } = useContext(BlogContext)
+
+  const toggleNav = () => setIsMenuOpen(!isMenuOpen)
 
   return <nav>
-    <NavBurger onClick={toggleNav}>
-      <span className={display ? "burger active" : "burger"}/>
+    <BurgerWrapper onClick={toggleNav}>
+    <NavBurger>
+      <span className={isMenuOpen ? "burger active" : "burger"}/>
     </NavBurger>
-    <NavMenu className={display ? "menu active" : "menu"}>
+    </BurgerWrapper>
+    <NavMenu className={isMenuOpen ? "menu active" : "menu"}>
       <MenuItem key="Blog">
         <StyledLink to="/" onClick={toggleNav}>Blog</StyledLink>
       </MenuItem>
