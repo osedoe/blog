@@ -1,8 +1,9 @@
 import React, { FC } from "react"
 import styled from "@emotion/styled"
+import { Link } from "gatsby"
 
-const Container = styled.div`
-    border-radius: 10px;
+const Container = styled(Link)`
+  border-radius: 10px;
   box-sizing: border-box;
   color: white;
   display: flex;
@@ -11,6 +12,7 @@ const Container = styled.div`
   user-select: none;
   width: max-content;
   transition: all 200ms ease-in-out;
+  text-decoration: none;
   
   :hover {
     background: var(--purple);
@@ -54,8 +56,13 @@ const parsePosts = (posts: number): string => (posts === 1) ? `${posts} post` : 
 
 export const TagPill: FC<TagPillProps> = ({ data }) => {
 
+  const handleOnClick = () => {
+    console.log(data.tag)
+  }
+
   const numberOfPosts = parsePosts(data.totalCount)
-  return <Container>
+  console.log(data.tag)
+  return <Container to={`/tags`} onClick={handleOnClick}>
     <LeftPart>{data.tag}</LeftPart>
     <RightPart>{numberOfPosts}</RightPart>
   </Container>
