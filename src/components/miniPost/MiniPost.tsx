@@ -38,7 +38,7 @@ const Container = styled.div`
       position: absolute;
       top: 69px;
       left: 0;
-      height: 50%;
+      height: 64%;
       width: 100%;
       transition: all 200ms ease-out;
       opacity: .6;
@@ -128,18 +128,18 @@ interface NodeModel {
   excerpt: string;
 }
 
-export const MiniPost: FC<MiniPostProps> = props => {
-  const { data: node } = props;
+export const MiniPost: FC<MiniPostProps> = ({ data: node }) => {
+  const { id, timeToRead, fields: { slug }, frontmatter: { title, date, spoiler } } = node
   const isMobile = useMedia("(max-width: 960px)")
 
-  return <Container key={node.id}>
-    <BlogLink to={node.fields.slug}>
-      <Date>{node.frontmatter.date}</Date>
+  return <Container key={id}>
+    <BlogLink to={slug}>
+      <Date>{date}</Date>
       <Title>
-        <h2>{node.frontmatter.title}{" "}</h2>
-        {!isMobile && <TimeToRead> / {node.timeToRead} min</TimeToRead>}
+        <h2>{title}{" "}</h2>
+        {!isMobile && <TimeToRead> / {timeToRead} min</TimeToRead>}
       </Title>
-      <Text>{node.frontmatter.spoiler}</Text>
+      <Text>{spoiler}</Text>
     </BlogLink>
   </Container>
 }
