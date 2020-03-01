@@ -2,16 +2,6 @@ import React from "react"
 import styled from "@emotion/styled"
 import { graphql, Link, useStaticQuery } from "gatsby"
 
-export const query = graphql`
-  query {
-    site {
-      siteMetadata {
-        title
-      }
-    }
-  }
-`
-
 const Title = styled(Link)`
   margin-left: 30px;
   text-decoration: none;

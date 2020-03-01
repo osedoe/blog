@@ -54,15 +54,18 @@ export interface TagPillProps {
 
 const parsePosts = (posts: number): string => (posts === 1) ? `${posts} post` : `${posts} posts`
 
+const toKebabCase = (string: string): string => {
+  return string
+    .replace(/([a-z])([A-Z])/g, "$1-$2")
+    .replace(/\s+/g, "-")
+    .toLowerCase()
+}
+
 export const TagPill: FC<TagPillProps> = ({ data }) => {
-
-  const handleOnClick = () => {
-    console.log(data.tag)
-  }
-
   const numberOfPosts = parsePosts(data.totalCount)
-  console.log(data.tag)
-  return <Container to={`/tags`} onClick={handleOnClick}>
+  const kebabTagName = toKebabCase(data.tag)
+
+  return <Container to={`/tags/${kebabTagName}`}>
     <LeftPart>{data.tag}</LeftPart>
     <RightPart>{numberOfPosts}</RightPart>
   </Container>

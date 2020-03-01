@@ -1,6 +1,13 @@
 const path = require(`path`)
 const { createFilePath } = require(`gatsby-source-filesystem`)
 
+const toKebabCase = (string) => {
+  return string
+    .replace(/([a-z])([A-Z])/g, "$1-$2")
+    .replace(/\s+/g, "-")
+    .toLowerCase()
+}
+
 exports.onCreateNode = ({ node, getNode, actions }) => {
   const { createNodeField } = actions
   if (node.internal.type === `MarkdownRemark`) {
@@ -15,7 +22,11 @@ exports.onCreateNode = ({ node, getNode, actions }) => {
 
 exports.createPages = async ({ graphql, actions }) => {
   const { createPage } = actions
-  const postsQuery = await graphql(`
+
+  const blogPostTemplate = path.resolve(`./src/templates/BlogPost.tsx`)
+  const tagsTemplate = path.resolve(`./src/templates/TagsPage.tsx`)
+
+  const result = await graphql(`
     query {
       allMarkdownRemark {
         edges {
@@ -23,35 +34,24 @@ exports.createPages = async ({ graphql, actions }) => {
             fields {
               slug
             }
-          }
-        }
-      }
-    }
-  `)
-
-  const tagsQuery = await graphql(`
-    query {
-      allMarkdownRemark {
-        group(field: frontmatter___tags) {
-          edges {
-            node {
-              frontmatter {
-                title
-                tags
-              }
+            frontmatter {
+              tags
             }
           }
+        }
+        group(field: frontmatter___tags) {
+          fieldValue
         }
       }
     }
   `)
 
   // Create single blog post pages
-  const posts = postsQuery.data.allMarkdownRemark.edges
+  const posts = result.data.allMarkdownRemark.edges
   posts.forEach(({ node }) => {
     createPage({
       path: node.fields.slug,
-      component: path.resolve(`./src/templates/BlogPost.tsx`),
+      component: blogPostTemplate,
       context: {
         // Data passed to context is available
         // in page queries as GraphQL variables.
@@ -60,12 +60,14 @@ exports.createPages = async ({ graphql, actions }) => {
     })
   })
 
-const tags = tagsQuery.data.allMarkdownRemark.edges
-  createPage({
-    path: `/tags`,
-    component: path.resolve(`./src/templates/TagsPage.tsx`),
-    context: {
-      tag,
-    },
+  const tags = result.data.allMarkdownRemark.group
+  tags.forEach(tag => {
+    createPage({
+      path: `/tags/${toKebabCase(tag.fieldValue)}/`,
+      component: tagsTemplate,
+      context: {
+        tag: tag.fieldValue,
+      },
+    })
   })
 }
