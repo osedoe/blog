@@ -39,8 +39,9 @@ const SideContent = styled.div`
 `
 
 export const Layout: FC = ({ children }) => {
-  const { isMenuOpen } = useContext(BlogContext)?.menu
+  const { isMenuOpen } = useContext(BlogContext).menu
   const isMobile = useMedia("(max-width: 960px)")
+  const { isMenuOpen } = menu
 
   return <Container>
     <Header/>
