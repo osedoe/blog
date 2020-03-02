@@ -14,6 +14,7 @@ module.exports = {
       twitter: "@osediaz",
     },
   },
+  pathPrefix: "/blog",
   plugins: [
     `gatsby-plugin-feed`,
     `gatsby-plugin-typescript`,
