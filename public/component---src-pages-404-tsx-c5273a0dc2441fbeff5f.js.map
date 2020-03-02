@@ -1,0 +1,1 @@
+{"version":3,"sources":["webpack:///./src/pages/404.tsx"],"names":[],"mappings":"6FAAA,6CAGe,qBACb,OAAO,YAAC,IAAD","file":"component---src-pages-404-tsx-c5273a0dc2441fbeff5f.js","sourcesContent":["import React from \"react\"\nimport { Layout } from \"../components/Layout\"\n\nexport default () => {\n  return <Layout>\n    Page not found...\n  </Layout>\n};\n"],"sourceRoot":""}
