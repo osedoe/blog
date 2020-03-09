@@ -1,5 +1,5 @@
 .burger {
-    background: var(--purple);
+    background: var(--blue);
     margin: 6px;
     position: fixed;
     right: 15px;
@@ -9,7 +9,7 @@
 }
 
 .burger:before {
-    background: var(--purple);
+    background: var(--blue);
     content: '';
     position: absolute;
     top: -8px;
@@ -19,7 +19,7 @@
 }
 
 .burger:after {
-    background: var(--purple);
+    background: var(--blue);
     content: '';
     position: absolute;
     top: 8px;
@@ -48,7 +48,6 @@
 
 .menu {
     opacity: 0;
-    transition: all .5s ease-in-out;
     width: 120px;
 }
 

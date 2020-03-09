@@ -5,9 +5,16 @@ Conversion: Bram de Haan (http://atelierbram.github.io/Base2Tone-prism/output/pr
 Generated with Base16 Builder (https://github.com/base16-builder/base16-builder)
 */
 
+@media (max-width: 640px) {
+    .gatsby-highlight {
+        box-sizing: border-box;
+        width: 290px;
+    }
+}
+
 .gatsby-highlight {
     border-radius: 10px;
-    box-shadow: 0 0 14px var(--pink-alpha);
+    box-shadow: var(--grey-shadow);
 }
 
 code[class*="language-"],
@@ -31,7 +38,7 @@ pre[class*="language-"] {
     -ms-hyphens: none;
     hyphens: none;
     background: #1d262f;
-    /*color: var(--purple);*/
+    /*color: var(--blue);*/
     color: #A64BC5;
 }
 

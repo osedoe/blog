@@ -2,7 +2,7 @@ import React, { FC } from "react"
 import styled from "@emotion/styled"
 
 const Container = styled.div`
-  font-family: 'Georgia', serif;
+  font-family: var(--work-sans);
   color: var(--dirty-white);
   
   @media (max-width: 790px) {

@@ -40,7 +40,7 @@ const Wrapper = styled.div`
     opacity: .85;
   }
   & a:hover {
-    color: var(--pink);
+    color: var(--blue);
     transform: scale(1.2);
     transition: all 400ms;
     opacity: 1;

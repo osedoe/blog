@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Space+Mono:700|Work+Sans&display=swap');
+
 :root {
     --black: rgb(29, 32, 41); /* #1D2029 */
     --dark-grey: rgb(49, 49, 49);
@@ -6,25 +8,32 @@
     --dirty-white: rgb(245, 245, 245);
     --white: #FDFDFD;
 
-    --blue: rgb(0, 135, 255);
+    /* --blue: rgb(0, 135, 255); */
     --yellow: rgb(249, 205, 70);
-    --purple: #642B73;
+    --blue: #0087FF;
     --pink: #C6426E;
 
-    --blue-alpha: rgba(0, 135, 255, .2);
-    --purple-alpha: rgba(108, 15, 128, .4);
-    --pink-alpha: rgba(198, 66, 110, .4);
+    --blue-alpha: rgba(0, 135, 255, .9);
+    --pink-alpha: rgba(198, 66, 110, .9);
+
+    --space-mono: 'Space Mono', monospace;
+    --work-sans: 'Work Sans', sans-serif;
+
+    --shadow: 0 0 6px var(--black);
+    --grey-shadow: 0 0 6px #333333;
+    --text-shadow: 1px 1px 3px var(--black);
 }
 
 html {
     background: var(--black);
     background: linear-gradient(150deg, var(--black), #333);
-    font-family: 'Georgia', serif;
+    font-family: var(--work-sans);
     overflow-x: hidden;
 }
 
 body {
-    font-family: audiowide, 'audiowide', monospace;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
     margin: 0;
 }
 

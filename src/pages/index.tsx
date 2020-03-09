@@ -37,7 +37,7 @@ const Intro = styled.div`
 
 const P = styled.p`
   color: var(--grey);
-  font-family: 'Georgia', sans-serif;
+  font-family: var(--work-sans);, sans-serif;
   font-style: italic;
   opacity: .8;
   padding: 3px 0;

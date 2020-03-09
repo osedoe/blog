@@ -8,12 +8,12 @@ const BurgerWrapper = styled.div`
   cursor: pointer;
   height: 50px;
   width: 50px;
-`;
+`
 
 const NavBurger = styled.div`
   box-sizing: border-box;
   color: var(--white);
-  font-family: Audiowide, monospace;
+  font-family: var(--space-mono);
   font-size: 20px;
   display: flex;
   justify-content: center;
@@ -36,7 +36,7 @@ const NavMenu = styled.div`
   color: var(--white);
   display: flex;
   flex-direction: column;
-  font-family: Audiowide, monospace;
+  font-family: var(--space-mono);
   font-size: 32px;
   height: 100vh;
   justify-content: center;
@@ -69,10 +69,11 @@ const MenuItem = styled.li`
 const StyledLink = styled(Link)`
   position: relative;
   text-decoration: none;
+  text-shadow: none;
   transition: all .8s;
   user-select: none;
   :after {
-    background: linear-gradient(to right, var(--purple), var(--pink));
+    background: linear-gradient(to right, var(--blue), var(--pink));
     border-radius: 4px;
     content: '';
     position: absolute;
@@ -99,9 +100,9 @@ export const MobileNav = () => {
 
   return <nav>
     <BurgerWrapper onClick={toggleNav}>
-    <NavBurger>
-      <span className={isMenuOpen ? "burger active" : "burger"}/>
-    </NavBurger>
+      <NavBurger>
+        <span className={isMenuOpen ? "burger active" : "burger"}/>
+      </NavBurger>
     </BurgerWrapper>
     <NavMenu className={isMenuOpen ? "menu active" : "menu"}>
       <MenuItem key="Blog">

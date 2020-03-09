@@ -11,7 +11,7 @@ const Container = styled.div`
   padding: 20px;
   position: relative;
   :before {
-      background: linear-gradient(to right, var(--purple), var(--pink));
+      background: linear-gradient(to right, var(--blue-alpha), var(--pink-alpha));
       border-radius: 4px;
       content: '';
       height: 0;
@@ -32,17 +32,18 @@ const Container = styled.div`
     }
   
     :before {
-      background: linear-gradient(to right, var(--purple), var(--pink));
+      background: linear-gradient(to right, var(--blue-alpha), var(--pink-alpha));
       border-radius: 8px;
       content: '';
       position: absolute;
-      top: 69px;
+      top: 0;
       left: 0;
-      height: 64%;
+      height: 100%;
       width: 100%;
       transition: all 200ms ease-out;
       opacity: .6;
       z-index: -1;
+      box-shadow: var(--shadow);
       
       @media (max-width: 960px) {
         top: 65px;
@@ -52,6 +53,7 @@ const Container = styled.div`
     h2 {
       color: var(--white);
       text-decoration: underline;
+      text-shadow: var(--grey-shadow);
     }
     
     span {
@@ -71,7 +73,7 @@ const BlogLink = styled(Link)`
 
 const Date = styled.small`
   color: var(--grey);
-  font-family: 'Georgia', serif;
+  font-family: var(--work-sans);
   font-style: italic;
   
   :hover {
@@ -97,8 +99,8 @@ const Title = styled.div`
 `
 
 const TimeToRead = styled.span`
-  color: var(--purple);
-  font-family: 'Georgia', serif;
+  color: var(--blue);
+  font-family: var(--work-sans);
   font-size: .8em;
   width: 100px;
   margin-left: 10px;
@@ -106,7 +108,7 @@ const TimeToRead = styled.span`
 
 const Text = styled.p`
   color: var(--pale-grey);
-  font-family: 'Georgia', serif;
+  font-family: var(--work-sans);
   margin: 0;
 `
 

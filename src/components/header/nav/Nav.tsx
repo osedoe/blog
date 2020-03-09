@@ -7,19 +7,21 @@ const Container = styled.nav`
   display: flex;
   justify-content: space-between;
   margin-right: 30px;
-`;
+  font-family: var(--space-mono);
+`
 
 const Li = styled(Link)`
   color: var(--dirty-white);
   font-size: 22px;
   padding: 15px 30px;
   text-decoration: none;
+  text-shadow: var(--text-shadow);
   user-select: none;
   position: relative;
   z-index: 2;
   
   :before {
-      background: linear-gradient(to right, var(--purple), var(--pink));
+      background: linear-gradient(to right, var(--blue), var(--pink));
       border-radius: 4px;
       content: '';
       height: 0;
@@ -36,7 +38,8 @@ const Li = styled(Link)`
     //text-shadow: 0 0 2px var(--dirty-white);
   
     :before {
-      background: linear-gradient(to right, var(--purple), var(--pink));
+      background: linear-gradient(to right, var(--blue), var(--pink));
+      box-shadow: var(--shadow);
       border-radius: 4px;
       content: '';
       position: absolute;
@@ -56,7 +59,7 @@ const Li = styled(Link)`
   @media (max-width: 890px) {
     font-size: 16px;
   }
-`;
+`
 
 export const Nav: FC = () => {
   return <Container>

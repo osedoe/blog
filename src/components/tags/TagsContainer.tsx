@@ -15,7 +15,9 @@ export const query = graphql`
 `
 
 const H3 = styled.h3`
-  color: var(--dirty-white);
+  color: var(--pink);
+  font-family: var(--space-mono);
+  text-shadow: 1px 1px 3px var(--black);
 `
 
 const TagWrapper = styled.div`

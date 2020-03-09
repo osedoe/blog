@@ -28,24 +28,26 @@ const Wrapper = styled.div`
 `
 
 const H2 = styled.h2`
-  color: var(--purple);
+  color: var(--blue);
+  font-family: var(--space-mono);
   font-size: 26px;
+  text-shadow: var(--text-shadow);
 `
 
 const Date = styled.span`
-  font-family: 'Georgia', serif;
-`;
+  font-family: var(--work-sans);
+`
 
 const Hr = styled.hr`
   border: 2px solid var(--pink);
   border-radius: 4px;
   margin-bottom: 30px;
-`;
+`
 
 const TagWrapper = styled.div`
   padding: 16px 16px 48px;
-  font-family: audiowide, 'audiowide', monospace;
-`;
+  font-family: var(--space-mono);
+`
 
 export interface BlogPostProps {
   data: any;
@@ -62,7 +64,7 @@ const BlogPost: FC<BlogPostProps> = ({ data }) => {
       <MainBody data={post}/>
       {/* TODO: Add tags related , join newsletter and share buttons */}
       {/*<TagWrapper>*/}
-        {/*{post.frontmatter.tags.map(tag => <Tag>{tag}</Tag>)}*/}
+      {/*{post.frontmatter.tags.map(tag => <Tag>{tag}</Tag>)}*/}
       {/*</TagWrapper>*/}
     </Wrapper>
   </Layout>

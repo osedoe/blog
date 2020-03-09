@@ -15,14 +15,14 @@ const Container = styled(Link)`
   text-decoration: none;
   
   :hover {
-    background: var(--purple);
+    background: var(--blue);
     cursor: pointer;
     
     span:first-of-type {
       background: var(--pink);  
     }
     span:last-of-type {
-      background: var(--purple);
+      background: var(--blue);
       display: inline-block;
       opacity: 1;
     }
@@ -30,7 +30,7 @@ const Container = styled(Link)`
 `
 
 const LeftPart = styled.span`
-  background: var(--purple);
+  background: var(--blue);
   border-radius: 10px;
   padding: 5px 15px;
   z-index: 1;

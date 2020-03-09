@@ -31,15 +31,16 @@ const StyledImg = styled(Img)`
 `
 
 const H3 = styled.h3`
-  color: var(--pink);
-  text-shadow: 0 0 3px var(--purple);
+  color: var(--blue);
+  font-family: var(--space-mono);
+  text-shadow: var(--text-shadow);
   padding: 20px 0 3px;
   margin: 0;
 `
 
 const P = styled.p`
   color: var(--pale-grey);
-  font-family: 'Georgia', serif;
+  font-family: var(--work-sans);
   
   :last-of-type {
   padding-bottom: 60px;
@@ -47,7 +48,7 @@ const P = styled.p`
 `
 
 const Ul = styled.ul`
-  font-family: 'Georgia', serif;
+  font-family: var(--work-sans);
   color: var(--pale-grey);
 `
 

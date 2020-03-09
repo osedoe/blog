@@ -11,14 +11,15 @@ const H1 = styled.h1`
   align-items: center;
   background: transparent;
   box-sizing: border-box;
-  background: linear-gradient(to right, var(--purple), var(--pink));
+  background: linear-gradient(to right, var(--blue), var(--pink));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   display: flex;
   flex-direction: row;
   opacity: .85;
-  font-family: Audiowide, monospace;
+  font-family: var(--space-mono);
   font-size: 2.3em;
+  font-weight: bold;
   margin: 0 8px 0 0;
   position: relative;
   transition: all .4s;
@@ -38,7 +39,7 @@ const H1 = styled.h1`
   
   @media (max-width: 890px) {
     font-size: 24px;
-    background: linear-gradient(to right, var(--purple), var(--pink));
+    background: linear-gradient(to right, var(--blue), var(--pink));
     content: attr(data-letters);
     position: absolute;
     z-index: 2;

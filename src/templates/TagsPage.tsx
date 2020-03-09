@@ -7,6 +7,7 @@ import { MiniPost } from "../components/miniPost/MiniPost"
 
 const Header = styled.h2`
   font-size: 1.3em;
+  text-shadow: var(--text-shadow);
 `
 
 const Title = styled.div`
@@ -33,7 +34,7 @@ const Li = styled.li``
 
 const Date = styled.small`
 color: var(--grey);
-  font-family: 'Georgia', serif;
+  font-family: var(--work-sans);
   font-style: italic;
   
   :hover {
@@ -42,8 +43,8 @@ color: var(--grey);
 `
 
 const TimeToRead = styled.span`
-  color: var(--purple);
-  font-family: 'Georgia', serif;
+  color: var(--blue);
+  font-family: var(--work-sans);
   font-size: .6em;
   width: 100px;
   margin-left: 10px;
