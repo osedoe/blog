@@ -61,7 +61,7 @@ const Container = styled.div`
     }
     
     &:active, :focus {
-      transform: translateX(500px);
+      transform: translateX(200px);
       opacity: 0;
     }
   }
