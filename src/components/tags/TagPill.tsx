@@ -43,6 +43,7 @@ const RightPart = styled.span`
   opacity: 0;
   padding: 5px 15px;
   margin-left: -5px;
+  transition: all 400ms ease-in;
 `
 
 export interface TagPillProps {

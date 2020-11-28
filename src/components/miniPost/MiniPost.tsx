@@ -8,18 +8,19 @@ const Container = styled.div`
   border-radius: 10px;
   box-sizing: border-box;
   margin-bottom: 30px;
-  padding: 20px;
+  padding: 18px;
   position: relative;
   :before {
-      background: linear-gradient(to right, var(--blue-alpha), var(--pink-alpha));
-      border-radius: 4px;
+      background: linear-gradient(135deg, var(--blue-alpha), var(--pink-alpha));
+      border-radius: 6px;
       content: '';
-      height: 0;
-      left: 25%;
       position: absolute;
-      top: 50%;
-      transition: all 500ms ease-in-out;
-      width: 50%;
+      left: 0;
+      top: 0;
+      opacity: .6;
+      transition: all 400ms ease-in-out;
+      height: 100%;
+      width: 100%;
       z-index: -1;
     }
   
@@ -32,17 +33,11 @@ const Container = styled.div`
     }
   
     :before {
-      background: linear-gradient(to right, var(--blue-alpha), var(--pink-alpha));
-      border-radius: 8px;
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      height: 100%;
-      width: 100%;
+      background: linear-gradient(45deg, var(--blue-alpha), var(--pink-alpha));
       transition: all 200ms ease-out;
-      opacity: .6;
-      z-index: -1;
+      opacity: .9;
+      top: 44px;
+      height: calc(100% - 38px);
       box-shadow: var(--shadow);
       
       @media (max-width: 960px) {
@@ -51,17 +46,19 @@ const Container = styled.div`
     }
     
     h2 {
-      color: var(--white);
+      color: var(--dirty-white);
       text-decoration: underline;
       text-shadow: var(--grey-shadow);
     }
     
     span {
-      color: var(--pale-grey)
+      color: var(--pale-grey);
+      transition: opacity 300ms ease-in 300ms;
+      opacity: 1;
     }
     
     &:active, :focus {
-      transform: translateX(200px);
+      transform: translateX(80px);
       opacity: 0;
     }
   }
@@ -75,18 +72,19 @@ const Date = styled.small`
   color: var(--grey);
   font-family: var(--work-sans);
   font-style: italic;
+  margin: 3px 0;
   
   :hover {
-  text-decoration: underline;
+    text-decoration: underline;
   }
 `
 
 const Title = styled.div`
-  color: var(--pink);
+  color: var(--dirty-white);
   display: flex;
   align-items: center;
   font-size: 26px;
-  margin: 3px 0 6px;
+  margin: 6px 0;
   
   h2 {
     font-size: 1.3em;
@@ -99,15 +97,18 @@ const Title = styled.div`
 `
 
 const TimeToRead = styled.span`
-  color: var(--blue);
+  color: var(--dirty-white);
   font-family: var(--work-sans);
   font-size: .8em;
-  width: 100px;
   margin-left: 10px;
+  opacity: 0;
+  transition: opacity 300ms ease-in 200ms;
+  width: 100px;
 `
 
 const Text = styled.p`
-  color: var(--pale-grey);
+  //color: var(--pale-grey);
+  color: var(--dirty-white);
   font-family: var(--work-sans);
   margin: 0;
 `
@@ -137,9 +138,9 @@ export const MiniPost: FC<MiniPostProps> = ({ data: node }) => {
   return <Container key={id}>
     <BlogLink to={slug}>
       <Date>{date}</Date>
+      {!isMobile && <TimeToRead> / {timeToRead} min</TimeToRead>}
       <Title>
         <h2>{title}{" "}</h2>
-        {!isMobile && <TimeToRead> / {timeToRead} min</TimeToRead>}
       </Title>
       <Text>{spoiler}</Text>
     </BlogLink>
