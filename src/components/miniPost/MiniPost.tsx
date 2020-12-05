@@ -1,7 +1,7 @@
-import React, { FC } from "react"
-import styled from "@emotion/styled"
-import { Link } from "gatsby"
-import useMedia from "../../utils/useMedia"
+import React, { FC } from 'react';
+import styled from '@emotion/styled';
+import { Link } from 'gatsby';
+import useMedia from '../../utils/useMedia';
 
 const Container = styled.div`
   background: transparent;
@@ -62,11 +62,11 @@ const Container = styled.div`
       opacity: 0;
     }
   }
-`
+`;
 
 const BlogLink = styled(Link)`
   text-decoration: none;
-`
+`;
 
 const Date = styled.small`
   color: var(--grey);
@@ -77,7 +77,7 @@ const Date = styled.small`
   :hover {
     text-decoration: underline;
   }
-`
+`;
 
 const Title = styled.div`
   color: var(--dirty-white);
@@ -94,7 +94,7 @@ const Title = styled.div`
   @media (max-width: 890px) {
     font-size: 20px;
   }
-`
+`;
 
 const TimeToRead = styled.span`
   color: var(--dirty-white);
@@ -104,14 +104,14 @@ const TimeToRead = styled.span`
   opacity: 0;
   transition: opacity 300ms ease-in 200ms;
   width: 100px;
-`
+`;
 
 const Text = styled.p`
   //color: var(--pale-grey);
   color: var(--dirty-white);
   font-family: var(--work-sans);
   margin: 0;
-`
+`;
 
 export interface MiniPostProps {
   data: NodeModel;
@@ -132,17 +132,17 @@ interface NodeModel {
 }
 
 export const MiniPost: FC<MiniPostProps> = ({ data: node }) => {
-  const { id, timeToRead, fields: { slug }, frontmatter: { title, date, spoiler } } = node
-  const isMobile = useMedia("(max-width: 960px)")
+  const { id, timeToRead, fields: { slug }, frontmatter: { title, date, spoiler } } = node;
+  const isMobile = useMedia('(max-width: 960px)');
 
   return <Container key={id}>
     <BlogLink to={slug}>
       <Date>{date}</Date>
       {!isMobile && <TimeToRead> / {timeToRead} min</TimeToRead>}
       <Title>
-        <h2>{title}{" "}</h2>
+        <h2>{title}{' '}</h2>
       </Title>
       <Text>{spoiler}</Text>
     </BlogLink>
-  </Container>
-}
+  </Container>;
+};
