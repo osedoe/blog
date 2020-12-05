@@ -1,8 +1,8 @@
-import React from "react"
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import styled from "@emotion/styled"
-import { faGithubSquare, faLinkedin, faTwitterSquare } from "@fortawesome/free-brands-svg-icons"
-import { faEnvelopeSquare, faRssSquare } from "@fortawesome/free-solid-svg-icons"
+import React from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import styled from '@emotion/styled';
+import { faGithubSquare, faLinkedin, faTwitterSquare } from '@fortawesome/free-brands-svg-icons';
+import { faEnvelopeSquare, faRssSquare } from '@fortawesome/free-solid-svg-icons';
 
 const Wrapper = styled.div`
   color: var(--dirty-white);
@@ -47,13 +47,7 @@ const Wrapper = styled.div`
   }
   
   @media (max-width: 960px) {
-    background: linear-gradient(
-      to bottom,
-      transparent 0%,
-      var(--dark-grey) 5%,
-      var(--dark-grey) 95%,
-      transparent 100%
-    );
+    background: transparent;
     flex-direction: row;
     left: 0;
     bottom: -2px;
@@ -62,6 +56,7 @@ const Wrapper = styled.div`
     width: 100%;
     padding-top: 9px;
     padding-bottom: 9px;
+    position: static;
     
     a:not(:last-child) {
       margin-right: 12px;
@@ -80,14 +75,13 @@ const Wrapper = styled.div`
       margin: 0 0 0 12px;
     }
   }
-`
+`;
 
-export const SocialBar = () => {
-  return <Wrapper>
+export const SocialBar = () =>
+  <Wrapper>
     <a href="mailto:jose.diazg@protonmail.com"><FontAwesomeIcon icon={faEnvelopeSquare}/></a>
     <a href="https://github.com/osedoe"><FontAwesomeIcon icon={faGithubSquare}/></a>
     <a href="https://twitter.com/Osedoe?lang=en"><FontAwesomeIcon icon={faTwitterSquare}/></a>
     <a href="https://linkedin.com/in/jose-diaz-gonzalez-696067107"><FontAwesomeIcon icon={faLinkedin}/></a>
     <a href="/rss.xml"><FontAwesomeIcon icon={faRssSquare}/></a>
-  </Wrapper>
-}
+  </Wrapper>;
