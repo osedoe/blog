@@ -1,6 +1,6 @@
-import React, { FC } from "react"
-import styled from "@emotion/styled"
-import { Link } from "gatsby"
+import React, { FC } from 'react';
+import styled from '@emotion/styled';
+import { Link } from 'gatsby';
 
 const Container = styled(Link)`
   border-radius: 10px;
@@ -27,14 +27,14 @@ const Container = styled(Link)`
       opacity: 1;
     }
   }
-`
+`;
 
 const LeftPart = styled.span`
   background: var(--blue);
   border-radius: 10px;
   padding: 5px 15px;
   z-index: 1;
-`
+`;
 
 const RightPart = styled.span`
   background: var(--pink);
@@ -43,7 +43,8 @@ const RightPart = styled.span`
   opacity: 0;
   padding: 5px 15px;
   margin-left: -5px;
-`
+  transition: all 400ms ease-in;
+`;
 
 export interface TagPillProps {
   data: {
@@ -52,21 +53,21 @@ export interface TagPillProps {
   }
 }
 
-const parsePosts = (posts: number): string => (posts === 1) ? `${posts} post` : `${posts} posts`
+const parsePosts = (posts: number): string => (posts === 1) ? `${posts} post` : `${posts} posts`;
 
 const toKebabCase = (string: string): string => {
   return string
-    .replace(/([a-z])([A-Z])/g, "$1-$2")
-    .replace(/\s+/g, "-")
-    .toLowerCase()
-}
+    .replace(/([a-z])([A-Z])/g, '$1-$2')
+    .replace(/\s+/g, '-')
+    .toLowerCase();
+};
 
 export const TagPill: FC<TagPillProps> = ({ data }) => {
-  const numberOfPosts = parsePosts(data.totalCount)
-  const kebabTagName = toKebabCase(data.tag)
+  const numberOfPosts = parsePosts(data.totalCount);
+  const kebabTagName = toKebabCase(data.tag);
 
   return <Container to={`/tags/${kebabTagName}`}>
     <LeftPart>{data.tag}</LeftPart>
     <RightPart>{numberOfPosts}</RightPart>
-  </Container>
-}
+  </Container>;
+};
