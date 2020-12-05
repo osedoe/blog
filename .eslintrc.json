@@ -14,5 +14,6 @@
       "all"
     ],
     "no-only-tests/no-only-tests": "error",
+    "semi": "error"
   }
 }
