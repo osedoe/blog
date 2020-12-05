@@ -1,5 +1,5 @@
-import React, { FC } from "react"
-import styled from "@emotion/styled"
+import React, { FC } from 'react';
+import styled from '@emotion/styled';
 
 const Container = styled.div`
   font-family: var(--work-sans);
@@ -10,12 +10,12 @@ const Container = styled.div`
       width: 100%;
     } 
   }
-`
+`;
 
 export interface MainBodyProps {
   data: any;
 }
 
 export const MainBody: FC<MainBodyProps> = ({ data }) => {
-  return <Container dangerouslySetInnerHTML={{ __html: data.html }}/>
-}
+  return <Container dangerouslySetInnerHTML={{ __html: data.html }} />;
+};

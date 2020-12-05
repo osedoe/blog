@@ -2,7 +2,7 @@ import React, { FC } from "react"
 import styled from "@emotion/styled"
 import { graphql } from "gatsby"
 import { Layout } from "../components/Layout"
-import { MainBody } from "../components/post/MainBody"
+import { MainBody } from "../components/mainBody/MainBody"
 
 export const query = graphql`
   query($slug: String!) {
