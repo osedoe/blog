@@ -1,6 +1,6 @@
 import React, { FC, useContext } from "react"
 import { Header } from "./header/Header"
-import { SocialBar } from "./social/SocialBar"
+import { SocialBar } from "./socialBar/SocialBar"
 import styled from "@emotion/styled"
 import useMedia from "../utils/useMedia"
 import { TagsContainer } from "./tags/TagsContainer"
