@@ -1,8 +1,9 @@
-import React from "react"
-import { Layout } from "../components/Layout"
-import styled from "@emotion/styled"
-import { graphql } from "gatsby"
-import { MiniPost } from "../components/miniPost/MiniPost"
+import React from 'react';
+import { Layout } from '../components/Layout';
+import styled from '@emotion/styled';
+import { graphql } from 'gatsby';
+import { Helmet } from 'react-helmet';
+import { MiniPost } from '../components/miniPost/MiniPost';
 
 export const query = graphql`
   query {
@@ -25,7 +26,7 @@ export const query = graphql`
       }
     }
   }
-`
+`;
 
 const Intro = styled.div`
   margin: 10px 20px 30px;
@@ -33,7 +34,7 @@ const Intro = styled.div`
   //@media (max-width: 790px) {
   //  margin: 0 0 30px;
   //} 
-`
+`;
 
 const P = styled.p`
   color: var(--grey);
@@ -42,15 +43,20 @@ const P = styled.p`
   opacity: .8;
   padding: 3px 0;
   margin: 0;
-`
+`;
 
 const Main = styled.div`
   display: grid;
   grid-template-columns: 1fr;
-`
+`;
 
 export default ({ data }) => {
   return <Layout>
+    <Helmet>
+      <meta charSet="utf-8"/>
+      <title>Ose Diaz</title>
+      <meta name="blog index"/>
+    </Helmet>
     <Intro>
       <P>Hola! I'm Ose, a Full Stack developer.</P>
       <P>This is my personal blog, where I write about all things web and not so web.</P>
@@ -61,5 +67,5 @@ export default ({ data }) => {
         {data.allMarkdownRemark.edges.map(({ node }, index) => (<MiniPost key={index} data={node}/>))}
       </div>
     </Main>
-  </Layout>
+  </Layout>;
 }
