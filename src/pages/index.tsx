@@ -64,4 +64,4 @@ export default ({ data }) => {
       </div>
     </Main>
   </Layout>;
-}
+};

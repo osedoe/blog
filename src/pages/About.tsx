@@ -1,11 +1,11 @@
-import React from "react"
-import { Layout } from "../components/Layout"
-import styled from "@emotion/styled"
-import { graphql, useStaticQuery } from "gatsby"
-import Img from "gatsby-image"
+import React from "react";
+import { Layout } from "../components/Layout";
+import styled from "@emotion/styled";
+import { graphql, useStaticQuery } from "gatsby";
+import Img from "gatsby-image";
 
-const NOLOGIS_SITE = "http://www.nologis.com/"
-const WEB_DEV_NOTES = "https://github.com/osedoe/Web-Development-Notes"
+const NOLOGIS_SITE = "http://www.nologis.com/";
+const WEB_DEV_NOTES = "https://github.com/osedoe/Web-Development-Notes";
 
 const aboutImage = graphql`
     query MyQuery {
@@ -18,7 +18,7 @@ const aboutImage = graphql`
         }
       }
     }
-  `
+  `;
 
 const StyledImg = styled(Img)`
   border-radius: 8px;
@@ -28,7 +28,7 @@ const StyledImg = styled(Img)`
   :hover {
     filter: none;
   }
-`
+`;
 
 const H3 = styled.h3`
   color: var(--blue);
@@ -36,7 +36,7 @@ const H3 = styled.h3`
   text-shadow: var(--text-shadow);
   padding: 20px 0 3px;
   margin: 0;
-`
+`;
 
 const P = styled.p`
   color: var(--pale-grey);
@@ -45,19 +45,19 @@ const P = styled.p`
   :last-of-type {
   padding-bottom: 60px;
   }
-`
+`;
 
 const Ul = styled.ul`
   font-family: var(--work-sans);
   color: var(--pale-grey);
-`
+`;
 
 const A = styled.a`
   color: var(--grey);
-`
+`;
 
 export default () => {
-  const data = useStaticQuery(aboutImage)
+  const data = useStaticQuery(aboutImage);
 
   return <Layout>
     <StyledImg fluid={data.file.childImageSharp.fluid} alt="Emily and Ose"/>
@@ -88,5 +88,5 @@ export default () => {
       <P>When I'm not building websites, going through CodeWars or promoting OSS -I like playing indie games, cooking, and playing pool with a pint of beer.</P>
       <P>Oh, also I'm a dog lover and the proud father of Suka, a half a staffy half dalmatian dog.
       </P>
-  </Layout>
-}
+  </Layout>;
+};

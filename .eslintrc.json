@@ -6,6 +6,9 @@
   "plugins": [
     "no-only-tests"
   ],
+  "ignorePatterns": [
+    "public/"
+  ],
   "rules": {
     "no-unused-vars": "error",
     "no-multiple-empty-lines": "error",
@@ -14,6 +17,7 @@
       "all"
     ],
     "no-only-tests/no-only-tests": "error",
-    "semi": "error"
+    "semi": "error",
+    "import/no-anonymous-default-export": 0
   }
 }

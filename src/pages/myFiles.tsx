@@ -32,7 +32,7 @@ export default ({ data }) => {
       </div>
     </>
   );
-}
+};
 
 export const query = graphql`
   query {

@@ -1,6 +1,6 @@
-import React, { FC, useState } from "react"
+import React, { FC, useState } from "react";
 
-export const BlogContext = React.createContext<any>(null)
+export const BlogContext = React.createContext<any>(null);
 
 export interface Context {
   menu: {
@@ -10,15 +10,15 @@ export interface Context {
 }
 
 export const BlogProvider: FC = ({ children }) => {
-  const [isMenuOpen, setIsMenuOpen] = useState(false)
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const values: Context = {
     menu: { isMenuOpen, setIsMenuOpen },
-  }
+  };
 
   return <BlogContext.Provider value={values}>
     {children}
-  </BlogContext.Provider>
-}
+  </BlogContext.Provider>;
+};
 
-BlogProvider.displayName = "Blog Provider"
+BlogProvider.displayName = "Blog Provider";

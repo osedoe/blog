@@ -1,14 +1,14 @@
-import React, { useContext } from "react"
-import { Link } from "gatsby"
-import styled from "@emotion/styled"
-import "./MobileNav.css"
-import { BlogContext } from "../../../../context/Context"
+import React, { useContext } from "react";
+import { Link } from "gatsby";
+import styled from "@emotion/styled";
+import "./MobileNav.css";
+import { BlogContext } from "../../../../context/Context";
 
 const BurgerWrapper = styled.div`
   cursor: pointer;
   height: 50px;
   width: 50px;
-`
+`;
 
 const NavBurger = styled.div`
   box-sizing: border-box;
@@ -28,7 +28,7 @@ const NavBurger = styled.div`
     font-size: 16px;
     margin: 0;
   }
-`
+`;
 
 const NavMenu = styled.div`
   align-items: center;
@@ -54,7 +54,7 @@ const NavMenu = styled.div`
     color: inherit;
     text-decoration: none;
   }
-`
+`;
 
 const MenuItem = styled.li`
   align-items: center;
@@ -64,7 +64,7 @@ const MenuItem = styled.li`
   margin: 6px;
   user-select: none;
   width: 160px;
-`
+`;
 
 const StyledLink = styled(Link)`
   position: relative;
@@ -91,12 +91,12 @@ const StyledLink = styled(Link)`
       height: 55%;
     }
   }
-`
+`;
 
 export const MobileNav = () => {
-  const { menu: { isMenuOpen, setIsMenuOpen } } = useContext(BlogContext)
+  const { menu: { isMenuOpen, setIsMenuOpen } } = useContext(BlogContext);
 
-  const toggleNav = () => setIsMenuOpen(!isMenuOpen)
+  const toggleNav = () => setIsMenuOpen(!isMenuOpen);
 
   return <nav>
     <BurgerWrapper onClick={toggleNav}>
@@ -112,5 +112,5 @@ export const MobileNav = () => {
         <StyledLink to="/About" onClick={toggleNav}>About</StyledLink>
       </MenuItem>
     </NavMenu>
-  </nav>
-}
+  </nav>;
+};

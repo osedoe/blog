@@ -1,54 +1,17 @@
-import React, { FC } from "react"
-import { Layout } from "../components/Layout"
-import { graphql } from "gatsby"
-import styled from "@emotion/styled"
-import useMedia from "../hooks/useMedia"
-import { MiniPost } from "../components/miniPost/MiniPost"
+import React, { FC } from 'react';
+import { Layout } from '../components/Layout';
+import { graphql } from 'gatsby';
+import styled from '@emotion/styled';
+import { MiniPost } from '../components/miniPost/MiniPost';
 
 const Header = styled.h2`
   font-size: 1.3em;
   text-shadow: var(--text-shadow);
-`
-
-const Title = styled.div`
-  color: var(--pink);
-  display: flex;
-  align-items: center;
-  font-size: 26px;
-  margin: 3px 0 6px;
-  
-  a {
-    margin: 0;
-  }
-  
-  @media (max-width: 890px) {
-    font-size: 20px;
-  }
-`
+`;
 
 const Ul = styled.ul`
   list-style-type: none;
-`
-
-const Li = styled.li``
-
-const Date = styled.small`
-color: var(--grey);
-  font-family: var(--work-sans);
-  font-style: italic;
-  
-  :hover {
-  text-decoration: underline;
-  }
-`
-
-const TimeToRead = styled.span`
-  color: var(--blue);
-  font-family: var(--work-sans);
-  font-size: .6em;
-  width: 100px;
-  margin-left: 10px;
-`
+`;
 
 export interface TagsPageProps {
   pageContext: {
@@ -63,27 +26,26 @@ export interface TagsPageProps {
 }
 
 const Tags: FC<TagsPageProps> = ({ pageContext, data }) => {
-  const isMobile = useMedia("(max-width: 960px)")
-  const { tag } = pageContext
-  const { edges, totalCount } = data.allMarkdownRemark
+  const { tag } = pageContext;
+  const { edges, totalCount } = data.allMarkdownRemark;
   const tagHeader = `${totalCount} post${
-    totalCount === 1 ? "" : "s"
-  } about ${tag}`
+    totalCount === 1 ? '' : 's'
+  } about ${tag}`;
 
   return <Layout>
     <Header>{tagHeader}</Header>
     <Ul>
       {edges.map(({ node }) => {
-        const { slug } = node.fields
-        return <Li key={slug}>
+        const { slug } = node.fields;
+        return <li key={slug}>
           <MiniPost data={node}/>
-        </Li>
+        </li>;
       })}
     </Ul>
-  </Layout>
-}
+  </Layout>;
+};
 
-export default Tags
+export default Tags;
 
 export const query = graphql`
   query($tag: String) {
@@ -108,4 +70,4 @@ export const query = graphql`
       }
     }
   }
-`
+`;
