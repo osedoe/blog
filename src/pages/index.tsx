@@ -29,11 +29,7 @@ export const query = graphql`
 `;
 
 const Intro = styled.div`
-  margin: 10px 20px 30px;
-  
-  //@media (max-width: 790px) {
-  //  margin: 0 0 30px;
-  //} 
+  margin: 10px 0 30px;
 `;
 
 const P = styled.p`

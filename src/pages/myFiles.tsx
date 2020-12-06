@@ -1,9 +1,9 @@
-import React from "react"
-import { graphql } from "gatsby"
-import { Header } from "../components/header/Header"
+import React from 'react';
+import { graphql } from 'gatsby';
+import { Header } from '../components/header/Header';
 
 export default ({ data }) => {
-  console.log(data)
+  console.log(data);
   return (
     <>
       <Header/>
@@ -31,7 +31,7 @@ export default ({ data }) => {
         </table>
       </div>
     </>
-  )
+  );
 }
 
 export const query = graphql`
@@ -47,4 +47,4 @@ export const query = graphql`
       }
     }
   }
-`
+`;

@@ -1,7 +1,7 @@
 import React, { FC } from 'react';
 import styled from '@emotion/styled';
 import { Link } from 'gatsby';
-import useMedia from '../../utils/useMedia';
+import useMedia from '../../hooks/useMedia';
 
 const Container = styled.div`
   background: transparent;
@@ -69,7 +69,7 @@ const BlogLink = styled(Link)`
 `;
 
 const Date = styled.small`
-  color: var(--grey);
+  color: var(--pale-grey);
   font-family: var(--work-sans);
   font-style: italic;
   margin: 3px 0;
@@ -108,7 +108,7 @@ const TimeToRead = styled.span`
 
 const Text = styled.p`
   //color: var(--pale-grey);
-  color: var(--dirty-white);
+  color: var(--pale-grey);
   font-family: var(--work-sans);
   margin: 0;
 `;

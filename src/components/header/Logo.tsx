@@ -1,11 +1,10 @@
-import React from "react"
-import styled from "@emotion/styled"
-import { graphql, Link, useStaticQuery } from "gatsby"
+import React from 'react';
+import styled from '@emotion/styled';
+import { graphql, Link, useStaticQuery } from 'gatsby';
 
 const Title = styled(Link)`
-  margin-left: 30px;
   text-decoration: none;
-`
+`;
 
 const H1 = styled.h1`
   align-items: center;
@@ -43,14 +42,14 @@ const H1 = styled.h1`
     content: attr(data-letters);
     position: absolute;
     z-index: 2;
-    overflow: hidden;
+    //overflow: hidden;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     white-space: nowrap;
     transition: width ease-in-out 0.4s;
     margin: 0;
   }
-`
+`;
 
 export const Logo = () => {
   const data = useStaticQuery(
@@ -62,12 +61,10 @@ export const Logo = () => {
           }
         }
       }
-    `,
-  )
+    `
+  );
 
   return <Title to="/">
-    <H1 data-letters="_Idle hands _build nothing">
-      {data.site.siteMetadata.title}
-    </H1>
-  </Title>
-}
+    <H1>{data.site.siteMetadata.title}</H1>
+  </Title>;
+};

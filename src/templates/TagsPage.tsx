@@ -2,7 +2,7 @@ import React, { FC } from "react"
 import { Layout } from "../components/Layout"
 import { graphql } from "gatsby"
 import styled from "@emotion/styled"
-import useMedia from "../utils/useMedia"
+import useMedia from "../hooks/useMedia"
 import { MiniPost } from "../components/miniPost/MiniPost"
 
 const Header = styled.h2`
