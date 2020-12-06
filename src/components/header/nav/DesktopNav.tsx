@@ -20,30 +20,28 @@ const Container = styled(motion.nav)`
   padding: 0 120px;
   margin-right: 30px;
   height: 60px;
-  width: 100%;
+  width: 100vw;
+  max-width: 1080px;
   z-index: 2;
 `;
 
-const FixedContainer = styled(Container)`
+const Top = styled(motion.span)`
+  background: linear-gradient(to right, var(--blue) 33%, var(--pink) 66%);
   position: fixed;
-  
-  :before {
-    content: '';
-    background: var(--grey);
-    position: absolute;
-    top: -140px;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    height: 200px;
-    width: 100vw; 
-  }
+  display: flex;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 5px;
+  width: 100vw; 
 `;
 
 const Header = styled.header`
   display: flex;
   align-items: center;
   justify-content: space-between;
+  width: 100%;
+  margin: auto;
   max-width: 1080px;
 `;
 
@@ -101,10 +99,11 @@ const NavWrapper = styled.div`
   
 `;
 
-const heightAnimation = {
-  initial: { y: -80 },
-  animate: { y: 0 }
-  // exit: { y: 40 }
+const topBarAnimation = {
+  initial: { x: '-100%' },
+  animate: { x: '0%' },
+  exit: { x: '100%' },
+  transition: { duration: 2, type: 'tween' }
 };
 
 const opacityAnimation = {
@@ -117,19 +116,10 @@ export const DesktopNav: FC = () => {
   const { menu: { isMenuOpen } } = useContext(BlogContext);
   const { scrollY } = useScroll();
 
-  const showFixedNav = scrollY >= 50;
-  if (showFixedNav) {
+  const showFixedBar = scrollY >= 80;
+  if (showFixedBar) {
     return <AnimatePresence>
-      <FixedContainer {...heightAnimation}>
-        <Header>
-          {!isMenuOpen && <Logo/>}
-          <NavWrapper>
-            <Li to="/">_Blog</Li>
-            {/*<Link to={`/projects`}>Projects</Link>*/}
-            <Li to="/About">_About</Li>
-          </NavWrapper>
-        </Header>
-      </FixedContainer>
+      <Top {...topBarAnimation}/>
     </AnimatePresence>;
   }
 

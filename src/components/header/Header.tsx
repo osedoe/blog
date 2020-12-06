@@ -6,6 +6,7 @@ import styled from '@emotion/styled';
 
 const Container = styled.div`
   grid-area: header;
+  width: 100%;
 `;
 
 export const Header: FC = () => {
