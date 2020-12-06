@@ -33,7 +33,8 @@ const Top = styled(motion.span)`
   left: 0;
   right: 0;
   height: 5px;
-  width: 100vw; 
+  width: 100vw;
+  z-index: 3; 
 `;
 
 const Header = styled.header`
