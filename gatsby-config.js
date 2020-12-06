@@ -6,13 +6,13 @@
 
 module.exports = {
   siteMetadata: {
-    title: "_Ose _Diaz",
-    author: "Ose Diaz",
-    description: "Personal blog by Ose Diaz.",
-    siteUrl: "https://osediaz.com",
+    title: '_Ose _Diaz',
+    author: 'Ose Diaz',
+    description: 'Personal blog by Ose Diaz.',
+    siteUrl: 'https://osediaz.com',
     social: {
-      twitter: "@osediaz",
-    },
+      twitter: '@osediaz'
+    }
   },
   plugins: [
     `gatsby-plugin-feed`,
@@ -35,7 +35,7 @@ module.exports = {
               // you may use this to prevent Prism from re-processing syntax.
               // This is an uncommon use-case though;
               // If you're unsure, it's best to use the default value.
-              classPrefix: "language-",
+              classPrefix: 'language-',
               // This is used to allow setting a language for inline code
               // (i.e. single backticks) by creating a separator.
               // This separator is a string and will do no white-space
@@ -65,36 +65,36 @@ module.exports = {
               // existing language" below.
               languageExtensions: [
                 {
-                  language: "superscript",
-                  extend: "javascript",
+                  language: 'superscript',
+                  extend: 'javascript',
                   definition: {
-                    superscript_types: /(SuperType)/,
+                    superscript_types: /(SuperType)/
                   },
                   insertBefore: {
                     function: {
-                      superscript_keywords: /(superif|superelse)/,
-                    },
-                  },
-                },
+                      superscript_keywords: /(superif|superelse)/
+                    }
+                  }
+                }
               ],
               // Customize the prompt used in shell output
               // Values below are default
               prompt: {
-                user: "root",
-                host: "localhost",
-                global: false,
-              },
-            },
-          },
-        ],
-      },
+                user: 'root',
+                host: 'localhost',
+                global: false
+              }
+            }
+          }
+        ]
+      }
     },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `src`,
-        path: `${__dirname}/src`,
-      },
-    },
-  ],
-}
+        path: `${__dirname}/src`
+      }
+    }
+  ]
+};
