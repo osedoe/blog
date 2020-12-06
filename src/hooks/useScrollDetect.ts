@@ -9,7 +9,10 @@ interface useScrollResponse {
 }
 
 export const useScroll = (): useScrollResponse => {
-  const boundingClientRect = document.body.getBoundingClientRect();
+  let boundingClientRect;
+  if (typeof window !== 'undefined') {
+    boundingClientRect = document.body.getBoundingClientRect();
+  }
 
   const [lastScrollTop, setLastScrollTop] = useState(0);
   const [bodyOffset, setBodyOffset] = useState(boundingClientRect);
