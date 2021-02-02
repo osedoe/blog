@@ -8,7 +8,7 @@ const Wrapper = styled.div`
   color: var(--dirty-white);
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-end;
 
   font-size: 28px;
   position: fixed;
@@ -25,7 +25,7 @@ const Wrapper = styled.div`
     width: 2px;
     background-color: var(--dirty-white);
     margin-bottom: 12px;
-    margin-right: 2px;
+    margin-right: 12px;
     border-radius: 2px;
     opacity: .85;
   }
@@ -35,7 +35,7 @@ const Wrapper = styled.div`
     width: 2px;
     background-color: var(--dirty-white);
     margin-top: 12px;
-    margin-right: 2px;
+    margin-right: 12px;
     border-radius: 2px;
     opacity: .85;
   }
@@ -46,6 +46,7 @@ const Wrapper = styled.div`
     opacity: 1;
   }
   
+  /* Horizontal bar */
   @media (max-width: 960px) {
     background: transparent;
     flex-direction: row;
@@ -65,14 +66,14 @@ const Wrapper = styled.div`
     :before {
       height: 2px;
       width: 201px;
-      margin: 0 12px 0 0;
+      margin: 0 12px 14px 0;
     }  
     
     
     :after {
       height: 2px;
       width: 50%;
-      margin: 0 0 0 12px;
+      margin: 0 0 14px 12px;
     }
   }
 `;
