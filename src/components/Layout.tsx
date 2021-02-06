@@ -12,20 +12,20 @@ const Container = styled.div`
   grid-template-columns: 2.5fr 1fr;
   grid-template-rows: 60px auto;
   grid-template-areas: "header header"
-                       "main     side"
-  ;
+                       "main     side";
   grid-gap: 60px;
   margin: 0 auto;
   min-height: 100vh;
   max-width: 1080px;
   padding: 60px 120px 200px;
   position: relative;
-  
+
   @media (max-width: 960px) {
     grid-template-columns: auto;
     grid-template-areas: "header"
                          "main"
-    ;
+  ;
+    align-items: center;
     padding: 0 15px;
   }
 `;
