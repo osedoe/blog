@@ -1,14 +1,14 @@
 import React, { FC } from 'react';
 import styled from '@emotion/styled';
+import { Logo } from '../../Logo';
 
 const Container = styled.div`
-  display: fixed;
-  width: 100vw;
-  border: 2px solid white;
+  box-sizing: border-box;
+  width: 100%;
 `;
 
 export const MobileMenu: FC = () => {
   return <Container>
-    123
+    <Logo/>
   </Container>;
 };

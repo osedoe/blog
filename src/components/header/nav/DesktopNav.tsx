@@ -14,13 +14,10 @@ const Container = styled(motion.nav)`
   display: flex;
   align-items: center;
   justify-content: center;
-  position: absolute;
-  top: 0;
-  left: 0;
-  padding: 0 120px;
+  padding: 0;
   margin-right: 30px;
   height: 60px;
-  width: 100vw;
+  width: 100%;
   max-width: 1080px;
   z-index: 2;
 `;
@@ -34,7 +31,7 @@ const Top = styled(motion.span)`
   right: 0;
   height: 5px;
   width: 100vw;
-  z-index: 3; 
+  z-index: 3;
 `;
 
 const Header = styled.header`
@@ -55,23 +52,23 @@ const Li = styled(Link)`
   user-select: none;
   position: relative;
   z-index: 2;
-  
+
   :before {
-      background: linear-gradient(to right, var(--blue), var(--pink));
-      border-radius: 4px;
-      content: '';
-      height: 0;
-      left: 25%;
-      position: absolute;
-      top: 50%;
-      transition: all 500ms ease-in-out;
-      width: 50%;
-      z-index: -1;
-    }
-  
+    background: linear-gradient(to right, var(--blue), var(--pink));
+    border-radius: 4px;
+    content: '';
+    height: 0;
+    left: 25%;
+    position: absolute;
+    top: 50%;
+    transition: all 500ms ease-in-out;
+    width: 50%;
+    z-index: -1;
+  }
+
   &:hover {
     color: var(--dirty-white);
-  
+
     :before {
       background: linear-gradient(to right, var(--blue), var(--pink));
       box-shadow: var(--shadow);
@@ -86,18 +83,18 @@ const Li = styled(Link)`
       z-index: -1;
     }
   }
-  
+
   @media (max-width: 890px) {
     font-size: 16px;
   }
-  
+
   @media (max-width: 890px) {
     font-size: 16px;
   }
 `;
 
 const NavWrapper = styled.div`
-  
+
 `;
 
 const topBarAnimation = {

@@ -17,14 +17,14 @@ const Container = styled.div`
   margin: 0 auto;
   min-height: 100vh;
   max-width: 1080px;
-  padding: 60px 120px 200px;
+  padding: 30px 90px 200px;
   position: relative;
 
   @media (max-width: 960px) {
     grid-template-columns: auto;
     grid-template-areas: "header"
                          "main"
-  ;
+                         "social";
     align-items: center;
     padding: 0 15px;
   }
@@ -36,6 +36,9 @@ const MainContent = styled.div`
 
 const SideContent = styled.div`
   grid-area: side;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 `;
 
 export const Layout: FC = ({ children }) => {
