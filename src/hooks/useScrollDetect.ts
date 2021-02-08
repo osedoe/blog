@@ -16,16 +16,16 @@ export const useScroll = (): useScrollResponse => {
 
   const [lastScrollTop, setLastScrollTop] = useState(0);
   const [bodyOffset, setBodyOffset] = useState(boundingClientRect);
-  const [scrollY, setScrollY] = useState(bodyOffset.top);
-  const [scrollX, setScrollX] = useState(bodyOffset.left);
+  const [scrollY, setScrollY] = useState(bodyOffset?.top);
+  const [scrollX, setScrollX] = useState(bodyOffset?.left);
   const [scrollDirection, setScrollDirection] = useState<ScrollDirection>();
 
   const listener = () => {
     setBodyOffset(boundingClientRect);
-    setScrollY(-bodyOffset.top);
-    setScrollX(bodyOffset.left);
-    setScrollDirection(lastScrollTop > -bodyOffset.top ? 'up' : 'down');
-    setLastScrollTop(-bodyOffset.top);
+    setScrollY(-bodyOffset?.top);
+    setScrollX(bodyOffset?.left);
+    setScrollDirection(lastScrollTop > -bodyOffset?.top ? 'up' : 'down');
+    setLastScrollTop(-bodyOffset?.top);
   };
 
   useEffect(() => {
