@@ -22,16 +22,18 @@ const Container = styled.div`
 
   @media (max-width: 960px) {
     grid-template-columns: auto;
+    grid-template-rows: 60px 1fr 60px;
     grid-template-areas: "header"
                          "main"
                          "social";
     align-items: center;
-    padding: 0 15px;
+    padding: 15px;
   }
 `;
 
 const MainContent = styled.div`
   grid-area: main;
+  align-items: start;
 `;
 
 const SideContent = styled.div`
