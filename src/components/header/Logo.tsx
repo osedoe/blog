@@ -3,7 +3,6 @@ import styled from '@emotion/styled';
 import { graphql, Link, useStaticQuery } from 'gatsby';
 
 const Title = styled(Link)`
-  border: 1px solid red;
   box-sizing: border-box;
   grid-area: logo;
   text-decoration: none;
