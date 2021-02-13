@@ -1,7 +1,7 @@
 import React, { FC } from 'react';
-import { DesktopNav } from './nav/DesktopNav';
+import { DesktopHeader } from './nav/DesktopHeader';
 import useMedia from '../../hooks/useMedia';
-import { MobileMenu } from './nav/menu/MobileMenu';
+import { MobileHeader } from './nav/mobile/MobileHeader';
 import styled from '@emotion/styled';
 
 const Container = styled.div`
@@ -14,10 +14,10 @@ export const Header: FC = () => {
 
   const renderNavigation = () => {
     if (isMobile) {
-      return <MobileMenu/>;
+      return <MobileHeader/>;
       // return <MobileNav/>;
     }
-    return <DesktopNav/>;
+    return <DesktopHeader/>;
   };
 
   const renderNav = renderNavigation();

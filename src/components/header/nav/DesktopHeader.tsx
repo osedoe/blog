@@ -110,7 +110,7 @@ const opacityAnimation = {
   exit: { opacity: 0.4 }
 };
 
-export const DesktopNav: FC = () => {
+export const DesktopHeader: FC = () => {
   const { menu: { isMenuOpen } } = useContext(BlogContext);
   const { scrollY } = useScroll();
 

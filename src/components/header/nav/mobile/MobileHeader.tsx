@@ -11,7 +11,7 @@ const Container = styled.div`
   width: 100%;
 `;
 
-export const MobileMenu: FC = () => {
+export const MobileHeader: FC = () => {
   return <Container>
     <Logo/>
     <Burger/>
