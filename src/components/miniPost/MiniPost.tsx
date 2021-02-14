@@ -5,7 +5,7 @@ import useMedia from '../../hooks/useMedia';
 
 const Container = styled.div`
   background: transparent;
-  border-radius: 10px;
+  border-radius: 6px;
   box-sizing: border-box;
   margin-bottom: 30px;
   padding: 18px;
@@ -21,7 +21,7 @@ const Container = styled.div`
     position: absolute;
     left: 0;
     top: 0;
-    opacity: .6;
+    opacity: .7;
     transition: all 400ms ease-in-out;
     height: 100%;
     width: 100%;

@@ -55,7 +55,7 @@ export const Layout: FC = ({ children }) => {
     {!isMobile && <SideContent>
       <TagsContainer/>
     </SideContent>}
-    {!isMenuOpen && <SocialBar/>}
+    <SocialBar/>
   </Container>;
 };
 

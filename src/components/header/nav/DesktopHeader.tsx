@@ -45,7 +45,7 @@ const Header = styled.header`
 
 const Li = styled(Link)`
   color: var(--dirty-white);
-  font-size: 22px;
+  font-size: 1.2em;
   padding: 15px 0 15px 30px;
   text-decoration: none;
   text-shadow: var(--text-shadow);
@@ -58,12 +58,13 @@ const Li = styled(Link)`
     border-radius: 4px;
     content: '';
     height: 0;
-    left: 25%;
+    left: 50%;
     position: absolute;
     top: 50%;
     transition: all 500ms ease-in-out;
-    width: 50%;
+    width: 20%;
     z-index: -1;
+    opacity: 0;
   }
 
   &:hover {
@@ -81,20 +82,13 @@ const Li = styled(Link)`
       width: 85%;
       transition: all 200ms ease-out;
       z-index: -1;
+      opacity: .8;
     }
   }
 
-  @media (max-width: 890px) {
-    font-size: 16px;
+  &:active, &:focus {
+    transform: scaleX(1.2em);
   }
-
-  @media (max-width: 890px) {
-    font-size: 16px;
-  }
-`;
-
-const NavWrapper = styled.div`
-
 `;
 
 const topBarAnimation = {
@@ -125,11 +119,11 @@ export const DesktopHeader: FC = () => {
     <Container {...opacityAnimation}>
       <Header>
         {!isMenuOpen && <Logo/>}
-        <NavWrapper>
+        <div>
           <Li to="/">_Blog</Li>
           {/*<Link to={`/projects`}>Projects</Link>*/}
           <Li to="/About">_About</Li>
-        </NavWrapper>
+        </div>
       </Header>
     </Container>
   </AnimatePresence>;

@@ -8,18 +8,19 @@ Generated with Base16 Builder (https://github.com/base16-builder/base16-builder)
 @media (max-width: 640px) {
     .gatsby-highlight {
         box-sizing: border-box;
-        width: 290px;
+        width: calc(100vw - 30px);
     }
 }
 
 .gatsby-highlight {
-    border-radius: 10px;
-    box-shadow: var(--grey-shadow);
+    border-radius: 6px;
+    box-shadow: 0 0 2px var(--blue-alpha);
+    box-sizing: border-box;
 }
 
 code[class*="language-"],
 pre[class*="language-"] {
-    border-radius: 10px;
+    border-radius: 6px;
     font-family: Consolas, Menlo, Monaco, "Andale Mono WT", "Andale Mono", "Lucida Console", "Lucida Sans Typewriter", "DejaVu Sans Mono", "Bitstream Vera Sans Mono", "Liberation Mono", "Nimbus Mono L", "Courier New", Courier, monospace;
     font-size: 14px;
     line-height: 1.375;
@@ -68,7 +69,7 @@ pre[class*="language-"] {
 /* Inline code */
 :not(pre) > code[class*="language-"] {
     padding: .1em;
-    border-radius: .3em;
+    border-radius: 6px;
 }
 
 .token.comment,

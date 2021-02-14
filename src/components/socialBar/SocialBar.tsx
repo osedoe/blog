@@ -64,6 +64,7 @@ const Wrapper = styled.div`
     padding-top: 9px;
     padding-bottom: 9px;
     position: static;
+    z-index: 1;
 
     a:not(:last-child) {
       margin-right: 12px;
