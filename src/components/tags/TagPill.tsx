@@ -13,14 +13,15 @@ const Container = styled(Link)`
   width: max-content;
   transition: all 200ms ease-in-out;
   text-decoration: none;
-  
+
   :hover {
     background: var(--blue);
     cursor: pointer;
-    
+
     span:first-of-type {
-      background: var(--pink);  
+      background: var(--pink);
     }
+
     span:last-of-type {
       background: var(--blue);
       display: inline-block;
@@ -53,13 +54,18 @@ export interface TagPillProps {
   }
 }
 
-const parsePosts = (posts: number): string => (posts === 1) ? `${posts} post` : `${posts} posts`;
-
-const toKebabCase = (string: string): string => {
-  return string
+const toKebabCase = (string: string): string =>
+  string
     .replace(/([a-z])([A-Z])/g, '$1-$2')
     .replace(/\s+/g, '-')
     .toLowerCase();
+
+const parsePosts = (posts: number): string => {
+  if (posts === 1) {
+    return `${posts} post`;
+  }
+
+  return `${posts} posts`;
 };
 
 export const TagPill: FC<TagPillProps> = ({ data }) => {

@@ -1,30 +1,30 @@
-const path = require(`path`)
-const { createFilePath } = require(`gatsby-source-filesystem`)
+const path = require(`path`);
+const { createFilePath } = require(`gatsby-source-filesystem`);
 
 const toKebabCase = (string) => {
   return string
     .replace(/([a-z])([A-Z])/g, "$1-$2")
     .replace(/\s+/g, "-")
-    .toLowerCase()
-}
+    .toLowerCase();
+};
 
 exports.onCreateNode = ({ node, getNode, actions }) => {
-  const { createNodeField } = actions
+  const { createNodeField } = actions;
   if (node.internal.type === `MarkdownRemark`) {
-    const slug = createFilePath({ node, getNode, basePath: `pages` })
+    const slug = createFilePath({ node, getNode, basePath: `pages` });
     createNodeField({
       node,
       name: `slug`,
       value: slug,
-    })
+    });
   }
-}
+};
 
 exports.createPages = async ({ graphql, actions }) => {
-  const { createPage } = actions
+  const { createPage } = actions;
 
-  const blogPostTemplate = path.resolve(`./src/templates/BlogPost.tsx`)
-  const tagsTemplate = path.resolve(`./src/templates/TagsPage.tsx`)
+  const blogPostTemplate = path.resolve(`./src/templates/BlogPost.tsx`);
+  const tagsTemplate = path.resolve(`./src/templates/TagsPage.tsx`);
 
   const result = await graphql(`
     query {
@@ -44,10 +44,10 @@ exports.createPages = async ({ graphql, actions }) => {
         }
       }
     }
-  `)
+  `);
 
   // Create single blog post pages
-  const posts = result.data.allMarkdownRemark.edges
+  const posts = result.data.allMarkdownRemark.edges;
   posts.forEach(({ node }) => {
     createPage({
       path: node.fields.slug,
@@ -57,10 +57,10 @@ exports.createPages = async ({ graphql, actions }) => {
         // in page queries as GraphQL variables.
         slug: node.fields.slug,
       },
-    })
-  })
+    });
+  });
 
-  const tags = result.data.allMarkdownRemark.group
+  const tags = result.data.allMarkdownRemark.group;
   tags.forEach(tag => {
     createPage({
       path: `/tags/${toKebabCase(tag.fieldValue)}/`,
@@ -68,6 +68,6 @@ exports.createPages = async ({ graphql, actions }) => {
       context: {
         tag: tag.fieldValue,
       },
-    })
-  })
-}
+    });
+  });
+};

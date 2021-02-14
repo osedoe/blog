@@ -3,7 +3,8 @@
 :root {
     --black: rgb(29, 32, 41); /* #1D2029 */
     --dark-grey: rgb(49, 49, 49);
-    --grey: #898989;
+    --light-grey: #898989;
+    --grey: #202020;
     --pale-grey: #C9C9C9;
     --dirty-white: rgb(245, 245, 245);
     --white: #FDFDFD;
@@ -25,15 +26,16 @@
 }
 
 html {
-    background: var(--black);
-    background: linear-gradient(150deg, var(--black), #333);
+    background: var(--grey);
+    background: linear-gradient(150deg, var(--grey), var(--black));
+    /*background: #202020;*/
     font-family: var(--work-sans);
-    overflow-x: hidden;
 }
 
 body {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    overscroll-behavior: none;
     margin: 0;
 }
 
