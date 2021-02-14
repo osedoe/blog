@@ -1,37 +1,42 @@
 import React, { FC } from 'react';
 import styled from '@emotion/styled';
 import { Link } from 'gatsby';
-import useMedia from '../../utils/useMedia';
+import useMedia from '../../hooks/useMedia';
 
 const Container = styled.div`
   background: transparent;
-  border-radius: 10px;
+  border-radius: 6px;
   box-sizing: border-box;
   margin-bottom: 30px;
   padding: 18px;
   position: relative;
+  width: 100%;
+  //max-width: calc(100vw - 30px);
+
   :before {
-      background: linear-gradient(135deg, var(--blue-alpha), var(--pink-alpha));
-      border-radius: 6px;
-      content: '';
-      position: absolute;
-      left: 0;
-      top: 0;
-      opacity: .6;
-      transition: all 400ms ease-in-out;
-      height: 100%;
-      width: 100%;
-      z-index: -1;
-    }
-  
+    background: linear-gradient(135deg, var(--blue-alpha), var(--pink-alpha));
+    border-radius: 6px;
+    box-sizing: border-box;
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    opacity: .7;
+    transition: all 400ms ease-in-out;
+    height: 100%;
+    width: 100%;
+    max-width: calc(100vw - 30px);
+    z-index: -1;
+  }
+
   &:hover {
     cursor: pointer;
     transition: all 300ms ease-in-out;
-  
+
     small {
       text-decoration: underline;
     }
-  
+
     :before {
       background: linear-gradient(45deg, var(--blue-alpha), var(--pink-alpha));
       transition: all 200ms ease-out;
@@ -39,24 +44,24 @@ const Container = styled.div`
       top: 44px;
       height: calc(100% - 38px);
       box-shadow: var(--shadow);
-      
+
       @media (max-width: 960px) {
         top: 65px;
       }
     }
-    
+
     h2 {
       color: var(--dirty-white);
       text-decoration: underline;
       text-shadow: var(--grey-shadow);
     }
-    
+
     span {
       color: var(--pale-grey);
       transition: opacity 300ms ease-in 300ms;
       opacity: 1;
     }
-    
+
     &:active, :focus {
       transform: translateX(80px);
       opacity: 0;
@@ -69,11 +74,11 @@ const BlogLink = styled(Link)`
 `;
 
 const Date = styled.small`
-  color: var(--grey);
+  color: var(--pale-grey);
   font-family: var(--work-sans);
   font-style: italic;
   margin: 3px 0;
-  
+
   :hover {
     text-decoration: underline;
   }
@@ -85,12 +90,12 @@ const Title = styled.div`
   align-items: center;
   font-size: 26px;
   margin: 6px 0;
-  
+
   h2 {
     font-size: 1.3em;
     margin: 0;
   }
-  
+
   @media (max-width: 890px) {
     font-size: 20px;
   }
@@ -108,7 +113,7 @@ const TimeToRead = styled.span`
 
 const Text = styled.p`
   //color: var(--pale-grey);
-  color: var(--dirty-white);
+  color: var(--pale-grey);
   font-family: var(--work-sans);
   margin: 0;
 `;

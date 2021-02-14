@@ -29,19 +29,15 @@ export const query = graphql`
 `;
 
 const Intro = styled.div`
-  margin: 10px 20px 30px;
-  
-  //@media (max-width: 790px) {
-  //  margin: 0 0 30px;
-  //} 
+  margin: 10px 0 30px;
 `;
 
 const P = styled.p`
-  color: var(--grey);
-  font-family: var(--work-sans);, sans-serif;
+  color: var(--white);
+  font-family: var(--work-sans), sans-serif;
   font-style: italic;
   opacity: .8;
-  padding: 3px 0;
+  padding: 0 0 6px;
   margin: 0;
 `;
 
@@ -62,10 +58,10 @@ export default ({ data }) => {
       <P>This is my personal blog, where I write about all things web and not so web.</P>
     </Intro>
     <Main>
-      {/*<h2>{data.allMarkdownRemark.totalCount} Posts so far...</h2>*/}
+      <h2>{data.allMarkdownRemark.totalCount} Posts so far...</h2>
       <div>
         {data.allMarkdownRemark.edges.map(({ node }, index) => (<MiniPost key={index} data={node}/>))}
       </div>
     </Main>
   </Layout>;
-}
+};
