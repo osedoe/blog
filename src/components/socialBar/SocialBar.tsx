@@ -10,7 +10,6 @@ const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: flex-end;
-  grid-area: social;
 
   font-size: 28px;
   position: fixed;
@@ -75,7 +74,6 @@ const Wrapper = styled.div`
       width: 201px;
       margin: 0 12px 14px 0;
     }
-
 
     :after {
       height: 2px;
