@@ -12,7 +12,7 @@ const Container = styled.div`
   grid-template-rows: 40px auto;
   grid-template-areas: "header header"
                        "main     side";
-  grid-gap: 60px;
+  grid-gap: 45px;
   margin: 0 auto;
   min-height: 100vh;
   max-width: 1080px;

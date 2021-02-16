@@ -53,33 +53,7 @@ const Wrapper = styled.div`
 
   /* Horizontal bar */
   @media (max-width: 960px) {
-    background: transparent;
-    flex-direction: row;
-    left: 0;
-    bottom: -2px;
-    overflow-x: hidden;
-    opacity: .95;
-    width: 100%;
-    padding-top: 9px;
-    padding-bottom: 9px;
-    position: static;
-    z-index: 1;
-
-    a:not(:last-child) {
-      margin-right: 12px;
-    }
-
-    :before {
-      height: 2px;
-      width: 201px;
-      margin: 0 12px 14px 0;
-    }
-
-    :after {
-      height: 2px;
-      width: 50%;
-      margin: 0 0 14px 12px;
-    }
+    display: none;
   }
 `;
 
