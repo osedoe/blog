@@ -6,16 +6,18 @@ const Title = styled(Link)`
   box-sizing: border-box;
   grid-area: logo;
   text-decoration: none;
-  height: 60px;
+  display: flex;
+  align-items: center;
 `;
 
 const H1 = styled.h1`
-  background: transparent;
+  background-color: transparent;
   box-sizing: border-box;
-  background: linear-gradient(to right, var(--blue), var(--pink));
+  background-image: linear-gradient(to right, var(--blue), var(--pink));
   -webkit-background-clip: text;
+  color: transparent;
   -webkit-text-fill-color: transparent;
-  display: flex;
+  display: inline-block;
   flex-direction: row;
   align-items: center;
   opacity: .85;
@@ -27,23 +29,9 @@ const H1 = styled.h1`
   height: 100%;
   transition: all .4s;
   user-select: none;
-  
-  @media (max-width: 1020px) {
-    :hover {
-      transform: none;
-    }
-  }
 
   @media (max-width: 890px) {
-    background: linear-gradient(to right, var(--blue), var(--pink));
-    content: attr(data-letters);
     font-size: 1.8em;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    white-space: nowrap;
-    transition: width ease-in-out 0.4s;
-    margin: 0;
-    z-index: 2;
   }
 `;
 
