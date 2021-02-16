@@ -1,10 +1,9 @@
-import React, { FC, useContext } from 'react';
+import React, { FC } from 'react';
 import { Header } from './header/Header';
 import { SocialBar } from './socialBar/SocialBar';
 import styled from '@emotion/styled';
 import useMedia from '../hooks/useMedia';
 import { TagsContainer } from './tags/TagsContainer';
-import { BlogContext } from '../context/Context';
 
 const Container = styled.div`
   color: var(--dirty-white);
@@ -24,8 +23,7 @@ const Container = styled.div`
     grid-template-columns: auto;
     grid-template-rows: 60px 1fr 60px;
     grid-template-areas: "header"
-                         "main"
-                         "social";
+                         "main";
     align-items: center;
     padding: 15px;
   }
@@ -44,7 +42,6 @@ const SideContent = styled.div`
 `;
 
 export const Layout: FC = ({ children }) => {
-  const { isMenuOpen } = useContext(BlogContext).menu;
   const isMobile = useMedia('(max-width: 960px)');
 
   return <Container>
