@@ -21,7 +21,7 @@ const Container = styled.div`
 
   @media (max-width: 960px) {
     grid-template-columns: auto;
-    grid-template-rows: 60px 1fr 60px;
+    grid-template-rows: 60px 1fr;
     grid-template-areas: "header"
                          "main";
     align-items: center;
