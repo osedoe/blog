@@ -1,9 +1,7 @@
 import React from 'react';
-import { Layout } from '../components/Layout';
 import styled from '@emotion/styled';
 import { graphql } from 'gatsby';
-import { MiniPost } from '../components/miniPost/MiniPost';
-import { SEO } from '../components/seo/SEO';
+import { Layout, MiniPost, SEO } from '../components';
 
 export const query = graphql`
   query {

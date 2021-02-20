@@ -1,8 +1,7 @@
 import React, { FC } from 'react';
 import styled from '@emotion/styled';
 import { graphql } from 'gatsby';
-import { Layout } from '../components/Layout';
-import { MainBody } from '../components/mainBody/MainBody';
+import { Layout, MainBody, SEO } from '../components';
 
 export const query = graphql`
   query($slug: String!) {
@@ -19,11 +18,11 @@ export const query = graphql`
 
 const Wrapper = styled.div`
   color: var(--dirty-white);
-  
+
   @media (max-width: 790px) {
     & iframe {
       width: 100%;
-    } 
+    }
   }
 `;
 
@@ -52,6 +51,7 @@ const BlogPost: FC<BlogPostProps> = ({ data }) => {
   const post = data.markdownRemark;
 
   return <Layout>
+    <SEO article={true}/>
     <Wrapper>
       <H2>_{post.frontmatter.title}</H2>
       <Date>Published on {post.frontmatter.date}</Date>
