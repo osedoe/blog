@@ -10,9 +10,8 @@ module.exports = {
     author: 'Ose Diaz',
     description: 'Personal blog by Ose Diaz.',
     siteUrl: 'https://osediaz.com',
-    social: {
-      twitter: '@osediaz'
-    }
+    twitterUsername: '@osedoe',
+    image: `${__dirname}/static/favicon.ico`
   },
   plugins: [
     `gatsby-plugin-feed`,

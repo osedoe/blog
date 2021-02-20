@@ -17,6 +17,7 @@
     "@fortawesome/free-brands-svg-icons": "^5.15.2",
     "@fortawesome/free-solid-svg-icons": "^5.15.2",
     "@fortawesome/react-fontawesome": "^0.1.14",
+    "@reach/router": "^1.3.4",
     "framer-motion": "^3.6.2",
     "gatsby": "^2.32.4",
     "gatsby-plugin-emotion": "^5.4.0",
