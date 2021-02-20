@@ -2,8 +2,8 @@ import React from 'react';
 import { Layout } from '../components/Layout';
 import styled from '@emotion/styled';
 import { graphql } from 'gatsby';
-import { Helmet } from 'react-helmet';
 import { MiniPost } from '../components/miniPost/MiniPost';
+import { SEO } from '../components/seo/SEO';
 
 export const query = graphql`
   query {
@@ -48,11 +48,7 @@ const Main = styled.div`
 
 export default ({ data }) => {
   return <Layout>
-    <Helmet>
-      <meta charSet="utf-8"/>
-      <title>Ose Diaz</title>
-      <meta name="blog index"/>
-    </Helmet>
+    <SEO article={false}/>
     <Intro>
       <P>Hola! I'm Ose, a Full Stack developer.</P>
       <P>This is my personal blog, where I write about all things web and not so web.</P>
