@@ -1,6 +1,6 @@
 import React from 'react';
 import { graphql } from 'gatsby';
-import { Header } from '../components/header/Header';
+import { Header } from '../components';
 
 export default ({ data }) => {
   console.log(data);

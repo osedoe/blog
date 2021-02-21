@@ -3,6 +3,8 @@ title: "Introduction to Design Patterns"
 date: "2021-02-14"  
 spoiler: "Start of this series where we will review different patterns and how to implement them"  
 tags: ["design patterns"]
+slug: "introduction-to-design-patterns"
+contentType: 'blog-post'
 ---
 
 !['Patterns'](https://images.unsplash.com/photo-1476445704028-a36e0c798192?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1350&q=80)

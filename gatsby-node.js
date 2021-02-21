@@ -3,8 +3,8 @@ const { createFilePath } = require(`gatsby-source-filesystem`);
 
 const toKebabCase = (string) => {
   return string
-    .replace(/([a-z])([A-Z])/g, "$1-$2")
-    .replace(/\s+/g, "-")
+    .replace(/([a-z])([A-Z])/g, '$1-$2')
+    .replace(/\s+/g, '-')
     .toLowerCase();
 };
 
@@ -15,7 +15,7 @@ exports.onCreateNode = ({ node, getNode, actions }) => {
     createNodeField({
       node,
       name: `slug`,
-      value: slug,
+      value: slug
     });
   }
 };
@@ -23,8 +23,8 @@ exports.onCreateNode = ({ node, getNode, actions }) => {
 exports.createPages = async ({ graphql, actions }) => {
   const { createPage } = actions;
 
-  const blogPostTemplate = path.resolve(`./src/templates/BlogPost.tsx`);
-  const tagsTemplate = path.resolve(`./src/templates/TagsPage.tsx`);
+  const BlogPostTemplate = path.resolve(`./src/templates/BlogPost.tsx`);
+  const TagsPageTemplate = path.resolve(`./src/templates/TagsPage.tsx`);
 
   const result = await graphql(`
     query {
@@ -35,7 +35,10 @@ exports.createPages = async ({ graphql, actions }) => {
               slug
             }
             frontmatter {
+              date(formatString: "DD MMMM, YYYY")
+              title
               tags
+              slug
             }
           }
         }
@@ -48,26 +51,26 @@ exports.createPages = async ({ graphql, actions }) => {
 
   // Create single blog post pages
   const posts = result.data.allMarkdownRemark.edges;
-  posts.forEach(({ node }) => {
+  posts.forEach(post => {
     createPage({
-      path: node.fields.slug,
-      component: blogPostTemplate,
+      path: `posts/${post.node.frontmatter.slug}`, //node.fields.slug,
+      component: BlogPostTemplate,
       context: {
         // Data passed to context is available
         // in page queries as GraphQL variables.
-        slug: node.fields.slug,
-      },
+        slug: post.node.fields.slug
+      }
     });
   });
 
   const tags = result.data.allMarkdownRemark.group;
   tags.forEach(tag => {
     createPage({
-      path: `/tags/${toKebabCase(tag.fieldValue)}/`,
-      component: tagsTemplate,
+      path: `tags/${toKebabCase(tag.fieldValue)}/`,
+      component: TagsPageTemplate,
       context: {
-        tag: tag.fieldValue,
-      },
+        tag: tag.fieldValue
+      }
     });
   });
 };
