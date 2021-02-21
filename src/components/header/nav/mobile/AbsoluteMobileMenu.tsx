@@ -2,6 +2,9 @@ import React, { FC } from 'react';
 import styled from '@emotion/styled';
 import { motion } from 'framer-motion';
 import { Link } from 'gatsby';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faEnvelopeSquare, faRssSquare } from '@fortawesome/free-solid-svg-icons';
+import { faGithubSquare, faLinkedin, faTwitterSquare } from '@fortawesome/free-brands-svg-icons';
 
 const Container = styled(motion.div)`
   background: linear-gradient(to bottom,
@@ -9,7 +12,7 @@ const Container = styled(motion.div)`
   var(--dark-grey));
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
   position: fixed;
   top: 0;
@@ -65,6 +68,22 @@ const Li = styled(Link)`
     }
 `;
 
+const NavigationItems = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+`;
+
+const Wrapper = styled.div`
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  margin-top: 40px;
+  width: 80%;
+`;
+
 const menuLayoutAnimation = {
   initial: {
     height: '0vh',
@@ -100,8 +119,17 @@ export const AbsoluteMobileMenu: FC = () => {
                     animate={menuLayoutAnimation.animate}
                     exit={menuLayoutAnimation.exit}
                     transition={menuLayoutAnimation.transition}>
-    <Li to="/">_Blog</Li>
-    {/*<Link to={`/projects`}>Projects</Link>*/}
-    <Li to="/About">_About</Li>
+    <NavigationItems>
+      <Li to="/">_Blog</Li>
+      {/*<Link to={`/projects`}>Projects</Link>*/}
+      <Li to="/About">_About</Li>
+    </NavigationItems>
+    <Wrapper>
+      <a href="mailto:jose.diazg@protonmail.com"><FontAwesomeIcon size="2x" icon={faEnvelopeSquare}/></a>
+      <a href="https://github.com/osedoe"><FontAwesomeIcon size="2x" icon={faGithubSquare}/></a>
+      <a href="https://twitter.com/Osedoe?lang=en"><FontAwesomeIcon size="2x" icon={faTwitterSquare}/></a>
+      <a href="https://linkedin.com/in/jose-diaz-gonzalez-696067107"><FontAwesomeIcon size="2x" icon={faLinkedin}/></a>
+      <a href="/rss.xml"><FontAwesomeIcon size="2x" icon={faRssSquare}/></a>
+    </Wrapper>
   </Container>;
 };

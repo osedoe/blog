@@ -28,7 +28,7 @@
 html {
     background: var(--grey);
     background: linear-gradient(150deg, var(--grey), var(--black));
-    /*background: #202020;*/
+    color: var(--dirty-white);
     font-family: var(--work-sans);
 }
 

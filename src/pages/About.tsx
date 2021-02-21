@@ -1,11 +1,11 @@
-import React from "react";
-import { Layout } from "../components/Layout";
-import styled from "@emotion/styled";
-import { graphql, useStaticQuery } from "gatsby";
-import Img from "gatsby-image";
+import React from 'react';
+import styled from '@emotion/styled';
+import { graphql, useStaticQuery } from 'gatsby';
+import Img from 'gatsby-image';
+import { Layout } from '../components';
 
-const NOLOGIS_SITE = "http://www.nologis.com/";
-const WEB_DEV_NOTES = "https://github.com/osedoe/Web-Development-Notes";
+const NOLOGIS_SITE = 'http://www.nologis.com/';
+const WEB_DEV_NOTES = 'https://github.com/osedoe/Web-Development-Notes';
 
 const aboutImage = graphql`
     query MyQuery {
@@ -24,7 +24,7 @@ const StyledImg = styled(Img)`
   border-radius: 8px;
   filter: brightness(.95) hue-rotate(-45deg);
   transition: filter 600ms ease-in-out;
-  
+
   :hover {
     filter: none;
   }
@@ -41,9 +41,9 @@ const H3 = styled.h3`
 const P = styled.p`
   color: var(--pale-grey);
   font-family: var(--work-sans);
-  
+
   :last-of-type {
-  padding-bottom: 60px;
+    padding-bottom: 60px;
   }
 `;
 
@@ -53,7 +53,9 @@ const Ul = styled.ul`
 `;
 
 const A = styled.a`
-  color: var(--grey);
+  color: var(--pink);
+  text-decoration: none;
+  font-weight: bold;
 `;
 
 export default () => {
@@ -85,8 +87,8 @@ export default () => {
       {/* FIXME: To review */}
       <li>Play indie games. I'm a fan of everything 8bit/16bit from years ago. And I love that it has gone back to trend and I can enjoy so many titles that bring me back such good memories. Also bonus points for the Nintendo Switch and opening a new cooperative world with the misses!</li>
     </Ul>
-      <P>When I'm not building websites, going through CodeWars or promoting OSS -I like playing indie games, cooking, and playing pool with a pint of beer.</P>
-      <P>Oh, also I'm a dog lover and the proud father of Suka, a half a staffy half dalmatian dog.
-      </P>
+    <P>When I'm not building websites, going through CodeWars or promoting OSS -I like playing indie games, cooking, and playing pool with a pint of beer.</P>
+    <P>Oh, also I'm a dog lover and the proud father of Suka, a half a staffy half dalmatian dog.
+    </P>
   </Layout>;
 };

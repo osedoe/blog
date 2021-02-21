@@ -18,12 +18,6 @@ export const query = graphql`
 
 const Wrapper = styled.div`
   color: var(--dirty-white);
-
-  @media (max-width: 790px) {
-    & iframe {
-      width: 100%;
-    }
-  }
 `;
 
 const H2 = styled.h2`

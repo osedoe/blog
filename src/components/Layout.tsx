@@ -1,9 +1,9 @@
 import React, { FC } from 'react';
-import { Header } from './header/Header';
-import { SocialBar } from './socialBar/SocialBar';
 import styled from '@emotion/styled';
-import useMedia from '../hooks/useMedia';
-import { TagsContainer } from './tags/TagsContainer';
+import { Header } from './header';
+import { SocialBar } from './socialBar/SocialBar';
+import { TagsContainer } from './tags';
+import { useMedia } from '../hooks';
 
 const Container = styled.div`
   color: var(--dirty-white);

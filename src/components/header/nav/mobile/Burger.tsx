@@ -6,7 +6,7 @@ import { AbsoluteMobileMenu } from './AbsoluteMobileMenu';
 const Container = styled(motion.div)`
   grid-area: burger;
   position: relative;
-  z-index: 2;
+  z-index: 4;
 `;
 
 const TopBar = styled(motion.span)`
@@ -18,7 +18,6 @@ const TopBar = styled(motion.span)`
   top: -10px;
   right: 0;
   overflow: hidden;
-
 `;
 
 const MiddleBar = styled(motion.span)`

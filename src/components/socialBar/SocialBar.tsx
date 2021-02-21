@@ -50,8 +50,7 @@ const Wrapper = styled.div`
     transition: all 400ms;
     opacity: 1;
   }
-
-  /* Horizontal bar */
+    
   @media (max-width: 960px) {
     display: none;
   }

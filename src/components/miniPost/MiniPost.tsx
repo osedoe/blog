@@ -1,7 +1,7 @@
 import React, { FC } from 'react';
 import styled from '@emotion/styled';
 import { Link } from 'gatsby';
-import useMedia from '../../hooks/useMedia';
+import { useMedia } from '../../hooks';
 
 const Container = styled.div`
   background: transparent;
@@ -11,7 +11,6 @@ const Container = styled.div`
   padding: 18px;
   position: relative;
   width: 100%;
-  //max-width: calc(100vw - 30px);
 
   :before {
     background: linear-gradient(135deg, var(--blue-alpha), var(--pink-alpha));
@@ -124,24 +123,27 @@ export interface MiniPostProps {
 
 interface NodeModel {
   id: string;
-  fields: {
-    slug: string;
-  }
+  // fields: {
+  //   slug: string;
+  // }
   frontmatter: {
     title: string;
     date: string;
     spoiler: string;
+    slug: string;
   }
   timeToRead: string;
   excerpt: string;
 }
 
 export const MiniPost: FC<MiniPostProps> = ({ data: node }) => {
-  const { id, timeToRead, fields: { slug }, frontmatter: { title, date, spoiler } } = node;
+  const { id, timeToRead, frontmatter: { title, date, spoiler, slug } } = node;
   const isMobile = useMedia('(max-width: 960px)');
 
+  const blogPostRoute = `posts/${slug}`;
+
   return <Container key={id}>
-    <BlogLink to={slug}>
+    <BlogLink to={blogPostRoute}>
       <Date>{date}</Date>
       {!isMobile && <TimeToRead> / {timeToRead} min</TimeToRead>}
       <Title>
