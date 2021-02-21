@@ -1,10 +1,8 @@
-import React, { FC, useContext } from 'react';
+import React, { FC } from 'react';
 import styled from '@emotion/styled';
 import { Link } from 'gatsby';
-import { BlogContext } from '../../../context/Context';
+import { motion } from 'framer-motion';
 import { Logo } from '../Logo';
-import { useScroll } from '../../../hooks/useScrollDetect';
-import { AnimatePresence, motion } from 'framer-motion';
 
 const Container = styled(motion.nav)`
   background: transparent;
@@ -91,40 +89,15 @@ const Li = styled(Link)`
   }
 `;
 
-const topBarAnimation = {
-  initial: { x: '-100%' },
-  animate: { x: '0%' },
-  exit: { x: '100%' },
-  transition: { duration: 2, type: 'tween' }
-};
-
-const opacityAnimation = {
-  initial: { opacity: 0.4 },
-  animate: { opacity: 1 },
-  exit: { opacity: 0.4 }
-};
-
 export const DesktopHeader: FC = () => {
-  const { menu: { isMenuOpen } } = useContext(BlogContext);
-  const { scrollY } = useScroll();
-
-  const showFixedBar = scrollY >= 80;
-  if (showFixedBar) {
-    return <AnimatePresence>
-      <Top {...topBarAnimation}/>
-    </AnimatePresence>;
-  }
-
-  return <AnimatePresence>
-    <Container {...opacityAnimation}>
-      <Header>
-        {!isMenuOpen && <Logo/>}
-        <div>
-          <Li to="/">_Blog</Li>
-          {/*<Link to={`/projects`}>Projects</Link>*/}
-          <Li to="/About">_About</Li>
-        </div>
-      </Header>
-    </Container>
-  </AnimatePresence>;
+  return <Container>
+    <Header>
+      <Logo/>
+      <div>
+        <Li to="/">_Blog</Li>
+        {/*<Link to={`/projects`}>Projects</Link>*/}
+        <Li to="/About">_About</Li>
+      </div>
+    </Header>
+  </Container>;
 };

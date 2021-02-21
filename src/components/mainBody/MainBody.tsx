@@ -11,7 +11,7 @@ const Container = styled.div`
     display: block;
     box-sizing: border-box;
     width: 90%;
-    margin: 6px;
+    margin: 6px auto;
   }
 
   @media (max-width: 790px) {

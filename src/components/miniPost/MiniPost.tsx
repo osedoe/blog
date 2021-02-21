@@ -1,7 +1,7 @@
 import React, { FC } from 'react';
 import styled from '@emotion/styled';
 import { Link } from 'gatsby';
-import useMedia from '../../hooks/useMedia';
+import { useMedia } from '../../hooks';
 
 const Container = styled.div`
   background: transparent;
@@ -11,7 +11,6 @@ const Container = styled.div`
   padding: 18px;
   position: relative;
   width: 100%;
-  //max-width: calc(100vw - 30px);
 
   :before {
     background: linear-gradient(135deg, var(--blue-alpha), var(--pink-alpha));

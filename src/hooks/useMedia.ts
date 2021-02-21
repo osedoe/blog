@@ -21,7 +21,7 @@ const managedEventListener = <T extends EventTarget, K extends keyof EventMap<T>
  *   // ...
  * }
  */
-export default (query: string): boolean => {
+export const useMedia = (query: string): boolean => {
   const mediaQueryList = useMemo(() => canUseDOM && matchMedia(query), [query]);
   const [matches, setMatches] = useState(mediaQueryList && mediaQueryList.matches);
 

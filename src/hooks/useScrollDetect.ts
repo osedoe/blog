@@ -8,7 +8,7 @@ interface useScrollResponse {
   scrollDirection?: ScrollDirection;
 }
 
-export const useScroll = (): useScrollResponse => {
+export const useScrollDetect = (): useScrollResponse => {
   let boundingClientRect;
   if (typeof window !== 'undefined') {
     boundingClientRect = document.body.getBoundingClientRect();
@@ -20,20 +20,20 @@ export const useScroll = (): useScrollResponse => {
   const [scrollX, setScrollX] = useState(bodyOffset?.left);
   const [scrollDirection, setScrollDirection] = useState<ScrollDirection>();
 
-  const listener = () => {
-    setBodyOffset(boundingClientRect);
-    setScrollY(-bodyOffset?.top);
-    setScrollX(bodyOffset?.left);
-    setScrollDirection(lastScrollTop > -bodyOffset?.top ? 'up' : 'down');
-    setLastScrollTop(-bodyOffset?.top);
-  };
 
   useEffect(() => {
+    const listener = () => {
+      setBodyOffset(boundingClientRect);
+      setScrollY(-bodyOffset?.top);
+      setScrollX(bodyOffset?.left);
+      setScrollDirection(lastScrollTop > -bodyOffset?.top ? 'up' : 'down');
+      setLastScrollTop(-bodyOffset?.top);
+    };
     window.addEventListener('scroll', listener);
     return () => {
       window.removeEventListener('scroll', listener);
     };
-  });
+  }, [bodyOffset?.left, bodyOffset?.top, boundingClientRect, lastScrollTop]);
 
   return {
     scrollY,
