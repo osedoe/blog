@@ -12,8 +12,10 @@ export const query = graphql`
           id
           frontmatter {
             title
-            date(formatString: "DD MMMM, YYYY")
+            date(formatString: "DD MMMM YYYY")
             spoiler
+            slug
+            contentType
           }
           timeToRead
           fields {
@@ -44,7 +46,17 @@ const Main = styled.div`
   grid-template-columns: 1fr;
 `;
 
+const byBlogPost = post => post.node.frontmatter.contentType === 'blog-post';
+const toMiniPostComponent = ({ node }, index) => <MiniPost key={index} data={node}/>;
+
 export default ({ data }) => {
+  const markdownContent = data.allMarkdownRemark.edges;
+
+  const blogPosts = markdownContent.filter(byBlogPost);
+  const miniPosts = blogPosts.map(toMiniPostComponent);
+
+  const blogPostsCount = blogPosts.length;
+
   return <Layout>
     <SEO article={false}/>
     <Intro>
@@ -52,9 +64,9 @@ export default ({ data }) => {
       <P>This is my personal blog, where I write about all things web and not so web.</P>
     </Intro>
     <Main>
-      <h2>{data.allMarkdownRemark.totalCount} Posts so far...</h2>
+      <h2>{blogPostsCount} Posts so far...</h2>
       <div>
-        {data.allMarkdownRemark.edges.map(({ node }, index) => (<MiniPost key={index} data={node}/>))}
+        {miniPosts}
       </div>
     </Main>
   </Layout>;

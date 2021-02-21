@@ -1,7 +1,7 @@
 {
-  "name": "gatsby-starter-hello-world",
+  "name": "ose-diaz-blog",
   "private": true,
-  "description": "A simplified bare-bones starter for Gatsby",
+  "description": "Personal blog of Ose Diaz, fullstack developer",
   "version": "0.1.0",
   "license": "MIT",
   "scripts": {
@@ -56,6 +56,7 @@
     "gatsby-plugin-sharp": "^2.14.1",
     "gatsby-remark-prismjs": "^3.13.0",
     "gatsby-source-filesystem": "^2.11.0",
+    "gatsby-source-git": "^1.1.0",
     "gatsby-transformer-remark": "^2.16.0",
     "gatsby-transformer-sharp": "^2.12.0",
     "prettier": "^2.2.1",
@@ -63,9 +64,9 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/gatsbyjs/gatsby-starter-hello-world"
+    "url": "https://github.com/osedoe"
   },
   "bugs": {
-    "url": "https://github.com/gatsbyjs/gatsby/issues"
+    "url": "https://github.com/osedoe/issues"
   }
 }
