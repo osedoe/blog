@@ -38,7 +38,7 @@ const Container = styled.div`
 
     :before {
       background: linear-gradient(45deg, var(--blue-alpha), var(--pink-alpha));
-      transition: all 200ms ease-out;
+      transition: all 200ms ease-in-out;
       opacity: .9;
       top: 44px;
       height: calc(100% - 38px);
@@ -57,7 +57,7 @@ const Container = styled.div`
 
     span {
       color: var(--pale-grey);
-      transition: opacity 300ms ease-in 300ms;
+      transition: opacity 300ms ease-in-out 0ms;
       opacity: 1;
     }
 
@@ -106,12 +106,11 @@ const TimeToRead = styled.span`
   font-size: .8em;
   margin-left: 10px;
   opacity: 0;
-  transition: opacity 300ms ease-in 200ms;
+  transition: opacity 300ms ease-in-out 200ms;
   width: 100px;
 `;
 
 const Text = styled.p`
-  //color: var(--pale-grey);
   color: var(--pale-grey);
   font-family: var(--work-sans);
   margin: 0;
