@@ -150,15 +150,15 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        name: `src`,
-        path: `${__dirname}/src`,
+        name: `posts`,
+        path: `${__dirname}/src/posts`,
         ignore: [`**/draft-*`]
       }
     },
     {
       resolve: `gatsby-source-git`,
       options: {
-        name: `dev-notes`,
+        name: `notes`,
         remote: 'https://github.com/osedoe/Web-Development-Notes.git',
         branch: `main`,
         patterns: ['**/*.md', '!README.md']

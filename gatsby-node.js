@@ -1,12 +1,6 @@
 const path = require(`path`);
 const { createFilePath } = require(`gatsby-source-filesystem`);
 
-const toKebabCase = (string) => {
-  return string
-    .replace(/([a-z])([A-Z])/g, '$1-$2')
-    .replace(/\s+/g, '-')
-    .toLowerCase();
-};
 
 exports.onCreateNode = ({ node, getNode, actions }) => {
   const { createNodeField } = actions;
@@ -20,12 +14,46 @@ exports.onCreateNode = ({ node, getNode, actions }) => {
   }
 };
 
+const createPost = (createPage, edge) => {
+  const BlogPostTemplate = path.resolve(`./src/templates/BlogPost.tsx`);
+  // const previous = index === edge.length - 1 ? null : edge[index + 1].node;
+  // const next = index === 0 ? null : edge[index - 1].node;
+  createPage({
+    path: `posts/${edge.node.frontmatter.slug}`, //node.fields.slug,
+    component: BlogPostTemplate,
+    context: {
+      // Data passed to context is available
+      // in page queries as GraphQL variables.
+      slug: edge.node.fields.slug
+      // previous,
+      // next
+    }
+  });
+};
+
+const createNote = (createPage, edge) => {
+  const NotesTemplate = path.resolve('./src/templates/NotesPage.tsx');
+  createPage({
+    path: `notes/${edge.node.frontmatter.slug}`,
+    component: NotesTemplate,
+    context: {
+      slug: edge.node.fields.slug
+    }
+  });
+};
+
+const isPublishedBlogPost = edge =>
+  Boolean(edge.node.frontmatter.published)
+  && edge.node.frontmatter.contentType === 'blog-post';
+
+const isPublishedNotes = edge =>
+  Boolean(edge.node.frontmatter.published)
+  && edge.node.frontmatter.contentType === 'notes';
+
 exports.createPages = async ({ graphql, actions }) => {
   const { createPage } = actions;
 
-  const BlogPostTemplate = path.resolve(`./src/templates/BlogPost.tsx`);
-  const TagsPageTemplate = path.resolve(`./src/templates/TagsPage.tsx`);
-
+  // allMarkdownRemark(filter: { frontmatter: {published: {eq: true} }}) {
   const result = await graphql(`
     query {
       allMarkdownRemark {
@@ -39,38 +67,30 @@ exports.createPages = async ({ graphql, actions }) => {
               title
               tags
               slug
+              contentType
+              published
             }
           }
-        }
-        group(field: frontmatter___tags) {
-          fieldValue
         }
       }
     }
   `);
 
-  // Create single blog post pages
-  const posts = result.data.allMarkdownRemark.edges;
-  posts.forEach(post => {
-    createPage({
-      path: `posts/${post.node.frontmatter.slug}`, //node.fields.slug,
-      component: BlogPostTemplate,
-      context: {
-        // Data passed to context is available
-        // in page queries as GraphQL variables.
-        slug: post.node.fields.slug
-      }
-    });
-  });
+  // Handle errors
+  if (result.errors) {
+    console.error('Error running GraphQL query');
+    return;
+  }
 
-  const tags = result.data.allMarkdownRemark.group;
-  tags.forEach(tag => {
-    createPage({
-      path: `tags/${toKebabCase(tag.fieldValue)}/`,
-      component: TagsPageTemplate,
-      context: {
-        tag: tag.fieldValue
-      }
-    });
+  // Create single blog post pages
+  const { edges } = result.data.allMarkdownRemark;
+  edges.forEach((edge) => {
+    if (isPublishedBlogPost(edge)) {
+      createPost(createPage, edge);
+    }
+
+    if (isPublishedNotes(edge)) {
+      createNote(createPage, edge);
+    }
   });
 };

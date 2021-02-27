@@ -1,6 +1,7 @@
 import React, { FC } from 'react';
-import { Layout, SEO } from '../components';
+import styled from '@emotion/styled';
 import { graphql } from 'gatsby';
+import { Layout, MainBody, SEO } from '../components';
 
 export const query = graphql`
   query($slug: String!) {
@@ -8,11 +9,15 @@ export const query = graphql`
       html
       frontmatter {
         title,
-        date(formatString: "DD MMMM, YYYY"),
         tags
       }
     }
   }
+`;
+
+const ContentContainer = styled.div`
+  box-sizing: border-box;
+  width: available;
 `;
 
 interface NotesPageProps {
@@ -22,10 +27,10 @@ interface NotesPageProps {
 const NotesPage: FC<NotesPageProps> = ({ data }) => {
   const note = data.markdownRemark;
   console.log('🍓', data);
-  return <Layout>
-    {/*<SEO article={true} title={note.frontmatter.title}/>*/}
-    <SEO article={true}/>
-    <div dangerouslySetInnerHTML={{ __html: data.html }}/>
+  return <Layout withSidebar={false}>
+    <SEO article={true} title={note.frontmatter.title}/>
+    {/*<SEO article={true}/>*/}
+    <MainBody data={note}/>
   </Layout>;
 };
 
