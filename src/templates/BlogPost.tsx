@@ -45,9 +45,9 @@ const BlogPost: FC<BlogPostProps> = ({ data }) => {
   const post = data.markdownRemark;
 
   return <Layout>
-    <SEO article={true}/>
+    <SEO article={true} title={post.frontmatter.title}/>
     <Wrapper>
-      <H2>_{post.frontmatter.title}</H2>
+      <H2>{post.frontmatter.title}</H2>
       <Date>Published on {post.frontmatter.date}</Date>
       <Hr/>
       <MainBody data={post}/>
