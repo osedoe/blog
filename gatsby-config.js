@@ -158,10 +158,10 @@ module.exports = {
     {
       resolve: `gatsby-source-git`,
       options: {
-        name: `Articles`,
+        name: `dev-notes`,
         remote: 'https://github.com/osedoe/Web-Development-Notes.git',
         branch: `main`,
-        patterns: ['**/*', '!**/*/README.md']
+        patterns: ['**/*.md', '!README.md']
       }
     }
   ]

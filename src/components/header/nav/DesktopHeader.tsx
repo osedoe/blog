@@ -94,9 +94,9 @@ export const DesktopHeader: FC = () => {
     <Header>
       <Logo/>
       <div>
-        <Li to="/">_Blog</Li>
-        {/*<Link to={`/projects`}>Projects</Link>*/}
-        <Li to="/About">_About</Li>
+        <Li to="/">Blog</Li>
+        <Li to={`/Notes`}>Notes</Li>
+        <Li to="/About">About</Li>
       </div>
     </Header>
   </Container>;

@@ -1,24 +1,22 @@
 import React from 'react';
 import styled from '@emotion/styled';
-import { graphql, useStaticQuery } from 'gatsby';
 import Img from 'gatsby-image';
 import { Layout } from '../components';
 
 const NOLOGIS_SITE = 'http://www.nologis.com/';
 const WEB_DEV_NOTES = 'https://github.com/osedoe/Web-Development-Notes';
 
-const aboutImage = graphql`
-    query MyQuery {
-      file(relativePath: { eq: "images/about1.jpg" }) {
-        childImageSharp {
-          # Specify the image processing specifications right in the query.
-          fluid {
-            ...GatsbyImageSharpFluid
-          }
-        }
-      }
-    }
-  `;
+// const aboutImage = graphql`
+//     query getFluidImage {
+//       file(relativePath: { eq: "..images/about1.jpg" }) {
+//         childImageSharp {
+//           fluid {
+//             ...GatsbyImageSharpFluid
+//           }
+//         }
+//       }
+//     }
+//   `;
 
 const StyledImg = styled(Img)`
   border-radius: 8px;
@@ -52,17 +50,17 @@ const Ul = styled.ul`
   color: var(--pale-grey);
 `;
 
-const A = styled.a`
+const ALink = styled.a`
   color: var(--pink);
   text-decoration: none;
   font-weight: bold;
 `;
 
 export default () => {
-  const data = useStaticQuery(aboutImage);
+  // const data = useStaticQuery(aboutImage);
 
   return <Layout>
-    <StyledImg fluid={data.file.childImageSharp.fluid} alt="Emily and Ose"/>
+    {/*<StyledImg fluid={data.file.childImageSharp.fluid} alt="Emily and Ose"/>*/}
     <H3>A foreword</H3>
     <P>Hola! My name is Jose, but people tend to call me Ose. I am a Full Stack Web Developer based currently in Tenerife, Spain -although I tend to work remotely most of the time.</P>
     <P>First of all, thank you for stopping by my blog. If you see an error, have any suggestions or just want to talk, don't hesitate in contacting me.</P>
@@ -70,12 +68,12 @@ export default () => {
     <H3>A bit of background</H3>
     <P>I'm a former chef/lawyer -yes- that in 2015 decided to move to Bristol, UK.</P>
     <P>I started dabbling with programming as a hobby on my free time without really knowing what I was doing, I just enjoyed building stuff, sometimes it was a crappy game, sometimes a website. By 2016, I decided that this was my passion and started learning as much as I could about Web Development to eventually transition careers.</P>
-    <P>In 2017, I moved back to Spain and got a Diploma in Development of Web Applications, while I was also enrolled in the EOI's Full Stack Web Development Bootcamp -making it enough to wrap up all the knowledge gaps I had from before.</P>
-    <P>Before finishing my studies, I had the immense fortune that one of my teachers at the time set his eyes on me and hired me for his company, <A href={NOLOGIS_SITE}>Nologis</A> as a FullStack developer.</P>
+    <P>In 2017, I moved back to Spain and got a Diploma in Development of Web Applications, while I was also enrolled in the EOI Business School's Full Stack Web Development Bootcamp -making it enough to wrap up all the knowledge gaps I had from before.</P>
+    <P>Before finishing my studies, I had the immense fortune that one of my teachers at the time set his eyes on me and hired me for his company, <ALink href={NOLOGIS_SITE}>Nologis</ALink> as a FullStack developer.</P>
 
     <H3>The Developer</H3>
     <P>I am truly passionate about the craft of programming and problem-solving, and love all things web and the community around. This has led me to occasionally give talks and mentor people that are starting out. It's my way to payback for being in such an amazing field, and I hope to eventually make teaching an important part of my life.</P>
-    <P>I am a firm believer of OSS and all the code that I write off work is free to check and reuse by anyone. I also keep a repository with all the notes that I take when I am learning something new and you are welcome to use it or participate on it <A href={WEB_DEV_NOTES}>here</A> -although beware you may find some notes in Spanish 😝.</P>
+    <P>I am a firm believer of OSS and all the code that I write off work is free to check and reuse by anyone. I also keep a repository with all the notes that I take when I am learning something new and you are welcome to use it or participate on it <a href={WEB_DEV_NOTES}>here</a> -although beware you may find some notes in Spanish 😝.</P>
     <P>My field of expertise is JavaScript. Right now, I'm working with ReactJS, NodeJS, MongoDB and some basic AWS. But I have used multiple programming languages in the past and I will happily dive into anything new given the chance.</P>
 
     <H3>The Person</H3>
