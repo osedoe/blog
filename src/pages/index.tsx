@@ -5,7 +5,7 @@ import { Layout, MiniPost, SEO } from '../components';
 
 export const query = graphql`
   query {
-    allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
+    allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }, filter: { frontmatter: {published: {eq: true}, contentType: {eq: "blog-post"}}}) {
       totalCount
       edges {
         node {
@@ -16,6 +16,7 @@ export const query = graphql`
             spoiler
             slug
             contentType
+            published
           }
           timeToRead
           fields {
@@ -46,16 +47,14 @@ const Main = styled.div`
   grid-template-columns: 1fr;
 `;
 
-const byBlogPost = post => post.node.frontmatter.contentType === 'blog-post';
 const toMiniPostComponent = ({ node }, index) => <MiniPost key={index} data={node}/>;
 
 export default ({ data }) => {
-  const markdownContent = data.allMarkdownRemark.edges;
+  const markdownContent = data.allMarkdownRemark;
+  const publishedBlogPostCount = markdownContent.totalCount;
 
-  const blogPosts = markdownContent.filter(byBlogPost);
+  const blogPosts = markdownContent.edges;
   const miniPosts = blogPosts.map(toMiniPostComponent);
-
-  const blogPostsCount = blogPosts.length;
 
   return <Layout>
     <SEO article={false}/>
@@ -64,7 +63,7 @@ export default ({ data }) => {
       <P>This is my personal blog, where I write about all things web and not so web.</P>
     </Intro>
     <Main>
-      <h2>{blogPostsCount} Posts so far...</h2>
+      <h2>{publishedBlogPostCount} Posts so far...</h2>
       <div>
         {miniPosts}
       </div>

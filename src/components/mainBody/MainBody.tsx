@@ -2,8 +2,9 @@ import React, { FC } from 'react';
 import styled from '@emotion/styled';
 
 const Container = styled.div`
-  font-family: var(--work-sans);
+  box-sizing: border-box;
   color: var(--dirty-white);
+  font-family: var(--work-sans);
   text-align: justify;
 
   & img {
