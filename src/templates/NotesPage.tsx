@@ -1,5 +1,4 @@
 import React, { FC } from 'react';
-import styled from '@emotion/styled';
 import { graphql } from 'gatsby';
 import { Layout, MainBody, SEO } from '../components';
 
@@ -15,21 +14,14 @@ export const query = graphql`
   }
 `;
 
-const ContentContainer = styled.div`
-  box-sizing: border-box;
-  width: available;
-`;
-
 interface NotesPageProps {
   data: any;
 }
 
-const NotesPage: FC<NotesPageProps> = ({ data }) => {
-  const note = data.markdownRemark;
-  console.log('🍓', data);
+const NotesPage: FC<NotesPageProps> = ({ data: { markdownRemark: note } }) => {
+  // const note = data.markdownRemark;
   return <Layout withSidebar={false}>
     <SEO article={true} title={note.frontmatter.title}/>
-    {/*<SEO article={true}/>*/}
     <MainBody data={note}/>
   </Layout>;
 };

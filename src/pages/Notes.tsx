@@ -1,7 +1,6 @@
 import React from 'react';
 import { graphql, Link, useStaticQuery } from 'gatsby';
 import { Layout } from '../components';
-import styled from '@emotion/styled';
 
 const webDevelopmentNotes = graphql`
 query getAllPublishedNotes {
@@ -27,8 +26,6 @@ query getAllPublishedNotes {
   }
 `;
 
-const NoteLink = styled(Link)`
-`;
 
 export default () => {
   const data = useStaticQuery(webDevelopmentNotes);
@@ -38,7 +35,7 @@ export default () => {
     <ul>
       {data.allMarkdownRemark.edges.map(article => {
         const noteRoute = `/notes/${article.node.frontmatter.slug}`;
-        return <li id={article.node.id}><NoteLink to={noteRoute}>{article.node.frontmatter.title}</NoteLink></li>;
+        return <li id={article.node.id}><Link id={article.node.id} to={noteRoute}>{article.node.frontmatter.title}</Link></li>;
       })}
     </ul>
   </Layout>;
