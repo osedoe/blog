@@ -47,7 +47,6 @@ const Main = styled.div`
   grid-template-columns: 1fr;
 `;
 
-const byBlogPost = post => post.node.frontmatter.contentType === 'blog-post' && post.node.frontmatter.published;
 const toMiniPostComponent = ({ node }, index) => <MiniPost key={index} data={node}/>;
 
 export default ({ data }) => {

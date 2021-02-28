@@ -120,9 +120,10 @@ export const AbsoluteMobileMenu: FC = () => {
                     exit={menuLayoutAnimation.exit}
                     transition={menuLayoutAnimation.transition}>
     <NavigationItems>
-      <Li to="/">_Blog</Li>
+      <Li to="/">Blog</Li>
       {/*<Link to={`/projects`}>Projects</Link>*/}
-      <Li to="/About">_About</Li>
+      <Li to="/Notes">Notes</Li>
+      <Li to="/About">About</Li>
     </NavigationItems>
     <Wrapper>
       <a href="mailto:jose.diazg@protonmail.com"><FontAwesomeIcon size="2x" icon={faEnvelopeSquare}/></a>

@@ -39,6 +39,7 @@ const H3 = styled.h3`
 const P = styled.p`
   color: var(--pale-grey);
   font-family: var(--work-sans);
+  text-align: justify;
 
   :last-of-type {
     padding-bottom: 60px;
