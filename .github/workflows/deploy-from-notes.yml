@@ -1,0 +1,11 @@
+name: Deploy from WebDevNotes
+on: repository_dispatch
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          repository: osedoe/Web-Development-Notes
+          path: main
+
