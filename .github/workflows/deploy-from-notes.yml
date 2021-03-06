@@ -1,4 +1,4 @@
-name: Deploy from WebDevNotes
+name: Deploy from WebDevNotes 2
 on:
   repository_dispatch:
     types: [ my-event ]
