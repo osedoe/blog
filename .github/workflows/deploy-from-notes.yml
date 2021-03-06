@@ -1,11 +1,12 @@
 name: Deploy from WebDevNotes
-on: repository_dispatch
+on:
+  repository_dispatch:
+    types: [ my-event ]
 jobs:
-  build:
+  deploy:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
         with:
-          repository: osedoe/Web-Development-Notes
-          path: main
-
+          ref: ${{ github.event.client_payload.ref }}
+      - run: echo ${{ github.event.client_payload.sha }}
